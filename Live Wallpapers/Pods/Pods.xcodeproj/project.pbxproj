@@ -1,0 +1,478 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00D85352B910F07F700DC832F42667C6 /* Pods-Live Wallpapers-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DCAE0F616BB54DE0D8AA3AB58650B65E /* Pods-Live Wallpapers-dummy.m */; };
+		9A5C0F6A919E75ECE67953BD1748E659 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
+		DC2227EB07F9A82DEE9DC8E91B0543A0 /* Pods-Live Wallpapers-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A345F2FF25CFE9BDA1FDFFD0F115ADED /* Pods-Live Wallpapers-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A7ED3F9AA30CAACB032ACBA0743CFF2 /* Pods_Live_Wallpapers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live_Wallpapers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		204511136F44BAC154C4B2739C9A2567 /* Pods-Live Wallpapers-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Live Wallpapers-frameworks.sh"; sourceTree = "<group>"; };
+		206C21BD3CB28217808E91CBE22427F5 /* Pods-Live Wallpapers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Live Wallpapers.release.xcconfig"; sourceTree = "<group>"; };
+		26F1FFA991731BF3F8FC4A75DD9EF2EB /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		2C9473AA141306CF8645C86522B67A70 /* Pods-Live Wallpapers.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Live Wallpapers.modulemap"; sourceTree = "<group>"; };
+		418FFB81868F60F7EC69ED7B8C4B7951 /* Pods-Live Wallpapers-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Live Wallpapers-acknowledgements.plist"; sourceTree = "<group>"; };
+		4456626CC31A79DAEA1D4304BE747FEB /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Headers/Public/FIRInstanceID.h; sourceTree = "<group>"; };
+		4610BB4E5807BB20D3118110C3E046F3 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		531BE9E6A7B756C76CF9336A0F929BF1 /* Pods-Live Wallpapers-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Live Wallpapers-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6DE37D4EA218D32FB90CBF3BADE63661 /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		75549E04C72A11571A5850146B6C5927 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMobileAds.framework; path = Frameworks/GoogleMobileAds.framework; sourceTree = "<group>"; };
+		7B271D29FE48F7EDAD9513A7782F2A05 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		7E1CC2E70B7FB9BE4759B288FB9F4F01 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Headers/Firebase.h; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A345F2FF25CFE9BDA1FDFFD0F115ADED /* Pods-Live Wallpapers-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Live Wallpapers-umbrella.h"; sourceTree = "<group>"; };
+		ABE8071136126D8FD17CD007F65660A4 /* Pods-Live Wallpapers-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Live Wallpapers-resources.sh"; sourceTree = "<group>"; };
+		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D2715F71C547F4AA799AD99C2C98E8D2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC2BC0FDAB3F183E6D607E46691906EC /* Pods-Live Wallpapers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Live Wallpapers.debug.xcconfig"; sourceTree = "<group>"; };
+		DCAE0F616BB54DE0D8AA3AB58650B65E /* Pods-Live Wallpapers-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Live Wallpapers-dummy.m"; sourceTree = "<group>"; };
+		FEB6E792B54F2F2481A0CA256B951A3F /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0F8EDC744F73BE560686F4EFB53AC7A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A5C0F6A919E75ECE67953BD1748E659 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08465D9718C86711F5D606866B4DBCCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6DE37D4EA218D32FB90CBF3BADE63661 /* GoogleInterchangeUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2D3925E84291C9E73EAD6BCF6312CF4B /* FirebaseAnalytics */ = {
+			isa = PBXGroup;
+			children = (
+				41937C97F0CA3301DACD61C0A8F27199 /* Frameworks */,
+			);
+			path = FirebaseAnalytics;
+			sourceTree = "<group>";
+		};
+		38D648E30051C88E5BC82EED1EAEBA73 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A7ED3F9AA30CAACB032ACBA0743CFF2 /* Pods_Live_Wallpapers.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		41937C97F0CA3301DACD61C0A8F27199 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4610BB4E5807BB20D3118110C3E046F3 /* FirebaseAnalytics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		47F741E6B3212C583ABD34278F76F3D8 /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				909FC8D6FD6D242DD1ABAB2B0BCD6069 /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		49750D615ED2A7D7CBE056F5B2008BCB /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				08465D9718C86711F5D606866B4DBCCD /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		4AEF7CE1B53BBBAAF06C3D4AF3D83FCA /* Pods-Live Wallpapers */ = {
+			isa = PBXGroup;
+			children = (
+				D2715F71C547F4AA799AD99C2C98E8D2 /* Info.plist */,
+				2C9473AA141306CF8645C86522B67A70 /* Pods-Live Wallpapers.modulemap */,
+				531BE9E6A7B756C76CF9336A0F929BF1 /* Pods-Live Wallpapers-acknowledgements.markdown */,
+				418FFB81868F60F7EC69ED7B8C4B7951 /* Pods-Live Wallpapers-acknowledgements.plist */,
+				DCAE0F616BB54DE0D8AA3AB58650B65E /* Pods-Live Wallpapers-dummy.m */,
+				204511136F44BAC154C4B2739C9A2567 /* Pods-Live Wallpapers-frameworks.sh */,
+				ABE8071136126D8FD17CD007F65660A4 /* Pods-Live Wallpapers-resources.sh */,
+				A345F2FF25CFE9BDA1FDFFD0F115ADED /* Pods-Live Wallpapers-umbrella.h */,
+				DC2BC0FDAB3F183E6D607E46691906EC /* Pods-Live Wallpapers.debug.xcconfig */,
+				206C21BD3CB28217808E91CBE22427F5 /* Pods-Live Wallpapers.release.xcconfig */,
+			);
+			name = "Pods-Live Wallpapers";
+			path = "Target Support Files/Pods-Live Wallpapers";
+			sourceTree = "<group>";
+		};
+		56521904B0E07900B43AC2AC5E8AABA9 /* GoogleSymbolUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				9D43F6C3A629EC575E69879745BD8D04 /* Frameworks */,
+			);
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		6C2D261DC6C0877E7141204EB68360EE /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				7C4306623D7366DA7A8ACA44FCC55E73 /* Analytics */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		7C4306623D7366DA7A8ACA44FCC55E73 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				7E1CC2E70B7FB9BE4759B288FB9F4F01 /* Firebase.h */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				D2FECC7868C8DB9BD8B5B92A7AEEAC1E /* Pods */,
+				38D648E30051C88E5BC82EED1EAEBA73 /* Products */,
+				BD9A52226E1036EDEC068078D46F0830 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8F8A62EFFA783ACA77A75027B93823BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75549E04C72A11571A5850146B6C5927 /* GoogleMobileAds.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		909FC8D6FD6D242DD1ABAB2B0BCD6069 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				26F1FFA991731BF3F8FC4A75DD9EF2EB /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9ABF5264BCEDE1ECAA63C2DF80F3CFE8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7B271D29FE48F7EDAD9513A7782F2A05 /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C5F1E337415EFF5A051939F1A541596 /* FirebaseInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				4456626CC31A79DAEA1D4304BE747FEB /* FIRInstanceID.h */,
+				9ABF5264BCEDE1ECAA63C2DF80F3CFE8 /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		9D43F6C3A629EC575E69879745BD8D04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEB6E792B54F2F2481A0CA256B951A3F /* GoogleSymbolUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD9A52226E1036EDEC068078D46F0830 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4AEF7CE1B53BBBAAF06C3D4AF3D83FCA /* Pods-Live Wallpapers */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		D2FECC7868C8DB9BD8B5B92A7AEEAC1E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6C2D261DC6C0877E7141204EB68360EE /* Firebase */,
+				2D3925E84291C9E73EAD6BCF6312CF4B /* FirebaseAnalytics */,
+				9C5F1E337415EFF5A051939F1A541596 /* FirebaseInstanceID */,
+				E6AEB67C1070A701D463FDCAE3278C04 /* Google-Mobile-Ads-SDK */,
+				49750D615ED2A7D7CBE056F5B2008BCB /* GoogleInterchangeUtilities */,
+				56521904B0E07900B43AC2AC5E8AABA9 /* GoogleSymbolUtilities */,
+				47F741E6B3212C583ABD34278F76F3D8 /* GoogleUtilities */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E6AEB67C1070A701D463FDCAE3278C04 /* Google-Mobile-Ads-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				8F8A62EFFA783ACA77A75027B93823BF /* Frameworks */,
+			);
+			path = "Google-Mobile-Ads-SDK";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B80DBB28A7DD95EC4C84250AD7C796FA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC2227EB07F9A82DEE9DC8E91B0543A0 /* Pods-Live Wallpapers-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A2731BDDB0A830300E6E1971628E0F59 /* Pods-Live Wallpapers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D66E51675E49E0A4E2A1F4E5C2498E17 /* Build configuration list for PBXNativeTarget "Pods-Live Wallpapers" */;
+			buildPhases = (
+				7BCBDDEE8923BAA4C2D43C3D529D5557 /* Sources */,
+				0F8EDC744F73BE560686F4EFB53AC7A8 /* Frameworks */,
+				B80DBB28A7DD95EC4C84250AD7C796FA /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Live Wallpapers";
+			productName = "Pods-Live Wallpapers";
+			productReference = 1A7ED3F9AA30CAACB032ACBA0743CFF2 /* Pods_Live_Wallpapers.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 38D648E30051C88E5BC82EED1EAEBA73 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A2731BDDB0A830300E6E1971628E0F59 /* Pods-Live Wallpapers */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BCBDDEE8923BAA4C2D43C3D529D5557 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00D85352B910F07F700DC832F42667C6 /* Pods-Live Wallpapers-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		97A7C60A00D352DD069F3B35052D6DB1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC2BC0FDAB3F183E6D607E46691906EC /* Pods-Live Wallpapers.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Live Wallpapers/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Live Wallpapers/Pods-Live Wallpapers.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Live_Wallpapers;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9E28354C87D8078E10F0FDDFB091E016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 206C21BD3CB28217808E91CBE22427F5 /* Pods-Live Wallpapers.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Live Wallpapers/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Live Wallpapers/Pods-Live Wallpapers.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Live_Wallpapers;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */,
+				3FA451D268613890FA8A5A03801E11D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D66E51675E49E0A4E2A1F4E5C2498E17 /* Build configuration list for PBXNativeTarget "Pods-Live Wallpapers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97A7C60A00D352DD069F3B35052D6DB1 /* Debug */,
+				9E28354C87D8078E10F0FDDFB091E016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
