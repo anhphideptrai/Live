@@ -6,5 +6,5 @@ target 'Live Wallpapers' do
   use_frameworks!
   pod 'Firebase/Core'
   pod 'Firebase/AdMob'
-
+  pod 'AFNetworking', '~> 3.1'
 end

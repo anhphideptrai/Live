@@ -8,18 +8,18 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LivePhotoCustomViewDelegate {
+    @IBOutlet weak var livePhoto: LivePhotoCustomView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        livePhoto.delegate = self
+        livePhoto.reload()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    func dataForLivePhotoView() -> (urlVideo: String?, urlImage: String?) {
+        return ("https://storage.googleapis.com/orgit-prod-bucket/6000334795177984/wallpaper_live/TheNewest/thenewest15.mov", "https://storage.googleapis.com/orgit-prod-bucket/6000334795177984/wallpaper_live/TheNewest/thenewest15.jpg")
     }
-
 
 }
 
