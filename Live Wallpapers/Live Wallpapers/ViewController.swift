@@ -15,10 +15,11 @@ class ViewController: UIViewController, LivePhotoCustomViewDelegate {
         super.viewDidLoad()
         livePhoto.delegate = self
         livePhoto.reload()
+        DownloadManager.sharedInstance.downloadWith(NSURL.init(string: "https://storage.googleapis.com/orgit-prod-bucket/6000334795177984/wallpaper_live/TheNewest/thenewest12.mov")!)
     }
     
     func dataForLivePhotoView() -> (urlVideo: String?, urlImage: String?) {
-        return ("https://storage.googleapis.com/orgit-prod-bucket/6000334795177984/wallpaper_live/TheNewest/thenewest15.mov", "https://storage.googleapis.com/orgit-prod-bucket/6000334795177984/wallpaper_live/TheNewest/thenewest15.jpg")
+        return ("https://storage.googleapis.com/orgit-prod-bucket/6000334795177984/wallpaper_live/TheNewest/thenewest12.mov", "https://storage.googleapis.com/orgit-prod-bucket/6000334795177984/wallpaper_live/TheNewest/thenewest12.jpg")
     }
 
 }
