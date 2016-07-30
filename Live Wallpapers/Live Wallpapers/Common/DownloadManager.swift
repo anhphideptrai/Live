@@ -46,21 +46,19 @@ class DownloadManager: AFURLSessionManager {
     func checkFileExists(path: String) -> Bool{
         return NSFileManager.defaultManager().fileExistsAtPath(self.getDocumentDirectory().URLByAppendingPathComponent(path).path!)
     }
-    func downloadWith(item: DownloadItem, progress downloadProgressBlock: ((NSProgress) -> Void)?) -> NSURLSessionDownloadTask{
+    func downloadWith(item: DownloadItem, progress: ((NSProgress) -> Void)?, completionHandler:((NSURLResponse, NSURL?, NSError?) -> Void)?) -> NSURLSessionDownloadTask{
         /* Create Downloaded folder if not exists */
         self.createdFolderIfNotExists(Constants.DOWNLOAD_FOLDER)
         
         let request = NSURLRequest.init(URL: NSURL.init(string: item.url)!)
-        let downloadTask = self.downloadTaskWithRequest(request, progress:downloadProgressBlock, destination:{(targetPath, response) -> NSURL in
+        let downloadTask = self.downloadTaskWithRequest(request, progress:progress, destination:{(targetPath, response) -> NSURL in
             let documents = self.getDocumentDirectory()
             let dir = Constants.DOWNLOAD_FOLDER + (item.output_dir ?? "")
             self.createdFolderIfNotExists(dir)
             let fileName = (dir != "" ? dir + "/" : "") + (item.fileName ?? response.suggestedFilename!)
             return documents.URLByAppendingPathComponent(fileName)
             
-            }, completionHandler:{(response, url, error) in
-             
-        })
+            }, completionHandler:completionHandler)
         downloadTask.resume()
         return downloadTask
     }
