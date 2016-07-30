@@ -9,6 +9,12 @@
 import UIKit
 import AFNetworking
 
+class DownloadItem: NSObject {
+    var url: String = ""
+    var fileName: String!
+    var output_dir: String!
+}
+
 class DownloadManager: AFURLSessionManager {
     class var sharedInstance: DownloadManager {
         struct Singleton {
@@ -16,8 +22,8 @@ class DownloadManager: AFURLSessionManager {
         }
         return Singleton.instance
     }
-    func downloadWith(url: NSURL) -> NSURLSessionDownloadTask{
-        let request = NSURLRequest.init(URL: url)
+    func downloadWith(item: DownloadItem) -> NSURLSessionDownloadTask{
+        let request = NSURLRequest.init(URL: NSURL.init(string: item.url)!)
         let downloadTask = self.downloadTaskWithRequest(request, progress:{(progress) in
             
             print(progress.localizedDescription)
@@ -25,7 +31,8 @@ class DownloadManager: AFURLSessionManager {
             }, destination:{(targetPath, response) -> NSURL in
                 
             let documents = try! NSFileManager.defaultManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: false)
-            return documents.URLByAppendingPathComponent(response.suggestedFilename!)
+            let fileName = (item.output_dir ?? "") + "/" + (item.fileName ?? response.suggestedFilename)
+            return documents.URLByAppendingPathComponent(fileName)
             
             }, completionHandler:{(response, url, error) in
              

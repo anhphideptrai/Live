@@ -15,7 +15,9 @@ class ViewController: UIViewController, LivePhotoCustomViewDelegate {
         super.viewDidLoad()
         livePhoto.delegate = self
         livePhoto.reload()
-        DownloadManager.sharedInstance.downloadWith(NSURL.init(string: "https://storage.googleapis.com/orgit-prod-bucket/6000334795177984/wallpaper_live/TheNewest/thenewest12.mov")!)
+        let item = DownloadItem()
+        item.url = "https://storage.googleapis.com/orgit-prod-bucket/6000334795177984/wallpaper_live/TheNewest/thenewest12.mov"
+        DownloadManager.sharedInstance.downloadWith(item)
     }
     
     func dataForLivePhotoView() -> (urlVideo: String?, urlImage: String?) {
