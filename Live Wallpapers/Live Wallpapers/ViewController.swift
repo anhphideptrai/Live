@@ -16,8 +16,12 @@ class ViewController: UIViewController, LivePhotoCustomViewDelegate {
         livePhoto.delegate = self
         livePhoto.reload()
         let item = DownloadItem()
+        item.fileName = "abc.mov"
+        item.output_dir = "001"
         item.url = "https://storage.googleapis.com/orgit-prod-bucket/6000334795177984/wallpaper_live/TheNewest/thenewest12.mov"
-        DownloadManager.sharedInstance.downloadWith(item)
+        DownloadManager.sharedInstance.downloadWith(item) {(progress) in
+            print(progress.localizedDescription)
+        }
     }
     
     func dataForLivePhotoView() -> (urlVideo: String?, urlImage: String?) {
