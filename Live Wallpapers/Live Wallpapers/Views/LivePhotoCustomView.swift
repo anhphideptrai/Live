@@ -12,7 +12,7 @@ import PhotosUI
 import AFNetworking.UIImageView_AFNetworking
 
 protocol LivePhotoCustomViewDelegate {
-    func dataForLivePhotoView() -> (urlVideo: String?, urlImage: String?)
+    func dataForLivePhotoView() -> (urlVideo: NSURL?, urlImage: NSURL?)
 }
 class LivePhotoCustomView: UIView {
     
@@ -71,13 +71,17 @@ class LivePhotoCustomView: UIView {
     
     func reload(){
         if delegate != nil {
-            imgView?.setImageWithURL(NSURL(string: (delegate?.dataForLivePhotoView().urlImage)!)!)
-            let urlImage = NSBundle.mainBundle().URLForResource("test", withExtension: "jpg")!
-            let urlVideo = NSBundle.mainBundle().URLForResource("test", withExtension: "mov")!
-            PHLivePhoto.requestLivePhotoWithResourceFileURLs([urlVideo, urlImage], placeholderImage: nil, targetSize: CGSize.zero, contentMode: .AspectFill, resultHandler: { (livePhoto, infoDict) in
-                self.livePhotoView?.livePhoto = livePhoto
-                self.livePhotoView?.startPlaybackWithStyle(PHLivePhotoViewPlaybackStyle.Full)
-            })
+            let urlImage = delegate?.dataForLivePhotoView().urlImage
+            let urlVideo = delegate?.dataForLivePhotoView().urlVideo
+            if (urlImage != nil) {
+                imgView?.setImageWithURL(urlImage!)
+            }
+            if (urlImage != nil && urlVideo != nil) {
+                PHLivePhoto.requestLivePhotoWithResourceFileURLs([urlVideo!, urlImage!], placeholderImage: nil, targetSize: CGSize.zero, contentMode: .AspectFill, resultHandler: { (livePhoto, infoDict) in
+                    self.livePhotoView?.livePhoto = livePhoto
+                    self.livePhotoView?.startPlaybackWithStyle(PHLivePhotoViewPlaybackStyle.Full)
+                })
+            }
         }
     }
 }
