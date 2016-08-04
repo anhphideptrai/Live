@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		B2376E8B1D534713006D24D5 /* UnzipFile.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = UnzipFile.py; sourceTree = "<group>"; };
 		B2FBDB451D41CFF7009858DA /* DownloadJson.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = DownloadJson.py; sourceTree = "<group>"; };
 		B2FBDB471D41D1CE009858DA /* live-photo2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "live-photo2.json"; sourceTree = "<group>"; };
 		B2FBDB481D4324E9009858DA /* live-photo1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "live-photo1.json"; sourceTree = "<group>"; };
@@ -19,6 +20,7 @@
 			children = (
 				B2FBDB461D41D1CE009858DA /* json */,
 				B2FBDB451D41CFF7009858DA /* DownloadJson.py */,
+				B2376E8B1D534713006D24D5 /* UnzipFile.py */,
 			);
 			sourceTree = "<group>";
 		};
