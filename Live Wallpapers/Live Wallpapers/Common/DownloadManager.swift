@@ -69,4 +69,11 @@ class DownloadManager: AFURLSessionManager {
         downloadTask.resume()
         return downloadTask
     }
+    
+    func getDataFromUrl(url: NSURL, completionHandler: ((NSURLResponse, AnyObject?, NSError?) -> Void)?) -> NSURLSessionDataTask{
+        let request = NSURLRequest.init(URL: url)
+        let dataTask = dataTaskWithRequest(request, completionHandler: completionHandler)
+        dataTask.resume()
+        return dataTask
+    }
 }

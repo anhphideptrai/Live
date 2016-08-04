@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		509B86F71D5394D800CBB831 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 509B86F61D5394D800CBB831 /* data.json */; };
 		B24714FF1D47660F00EB32A0 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24714FE1D47660F00EB32A0 /* DownloadManager.swift */; };
-		B24715021D4861D700EB32A0 /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B24715001D4861D700EB32A0 /* test.jpg */; };
-		B24715031D4861D700EB32A0 /* test.mov in Resources */ = {isa = PBXBuildFile; fileRef = B24715011D4861D700EB32A0 /* test.mov */; };
 		B2FBDB571D43D40F009858DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDB561D43D40F009858DA /* AppDelegate.swift */; };
 		B2FBDB591D43D40F009858DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FBDB581D43D40F009858DA /* ViewController.swift */; };
 		B2FBDB5C1D43D40F009858DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FBDB5A1D43D40F009858DA /* Main.storyboard */; };
@@ -21,10 +20,9 @@
 
 /* Begin PBXFileReference section */
 		0B4B99B794C4C6AC3F04895C /* Pods-Live Wallpapers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live Wallpapers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Live Wallpapers/Pods-Live Wallpapers.debug.xcconfig"; sourceTree = "<group>"; };
+		509B86F61D5394D800CBB831 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = Resources/Data/data.json; sourceTree = "<group>"; };
 		888208A17C22B72945AE40D4 /* Pods_Live_Wallpapers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live_Wallpapers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B24714FE1D47660F00EB32A0 /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadManager.swift; path = Common/DownloadManager.swift; sourceTree = "<group>"; };
-		B24715001D4861D700EB32A0 /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = test.jpg; path = Resources/test.jpg; sourceTree = "<group>"; };
-		B24715011D4861D700EB32A0 /* test.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = test.mov; path = Resources/test.mov; sourceTree = "<group>"; };
 		B2FBDB531D43D40F009858DA /* Live Wallpapers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live Wallpapers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2FBDB561D43D40F009858DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2FBDB581D43D40F009858DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		509B86F51D53949A00CBB831 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				509B86F61D5394D800CBB831 /* data.json */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		6A7A682D8A8733C12BE02FA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,8 +121,7 @@
 		B2FBDB6B1D43DFF9009858DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B24715001D4861D700EB32A0 /* test.jpg */,
-				B24715011D4861D700EB32A0 /* test.mov */,
+				509B86F51D53949A00CBB831 /* Data */,
 				B2FBDB561D43D40F009858DA /* AppDelegate.swift */,
 				B2FBDB5D1D43D40F009858DA /* Assets.xcassets */,
 				B2FBDB5F1D43D40F009858DA /* LaunchScreen.storyboard */,
@@ -213,10 +218,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2FBDB611D43D40F009858DA /* LaunchScreen.storyboard in Resources */,
-				B24715031D4861D700EB32A0 /* test.mov in Resources */,
 				B2FBDB5E1D43D40F009858DA /* Assets.xcassets in Resources */,
 				B2FBDB5C1D43D40F009858DA /* Main.storyboard in Resources */,
-				B24715021D4861D700EB32A0 /* test.jpg in Resources */,
+				509B86F71D5394D800CBB831 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
