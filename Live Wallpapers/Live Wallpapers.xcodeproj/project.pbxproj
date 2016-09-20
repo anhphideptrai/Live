@@ -13,6 +13,8 @@
 		50D577661D911A390017A7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50D577651D911A390017A7FF /* Assets.xcassets */; };
 		50D577691D911A390017A7FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D577671D911A390017A7FF /* LaunchScreen.storyboard */; };
 		50D577721D911B680017A7FF /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 50D577711D911B680017A7FF /* data.json */; };
+		50D577751D911EFD0017A7FF /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D577741D911EFD0017A7FF /* DownloadManager.swift */; };
+		50D577781D912E7F0017A7FF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D577771D912E7F0017A7FF /* Constants.swift */; };
 		69525CADD0CEA0797ABDD09F /* Pods_Live_Wallpapers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5F7EB07752F9944CE09B21 /* Pods_Live_Wallpapers.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +28,8 @@
 		50D577681D911A390017A7FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50D5776A1D911A390017A7FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50D577711D911B680017A7FF /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = Resources/data.json; sourceTree = "<group>"; };
+		50D577741D911EFD0017A7FF /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadManager.swift; path = API/DownloadManager.swift; sourceTree = "<group>"; };
+		50D577771D912E7F0017A7FF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Common/Constants.swift; sourceTree = "<group>"; };
 		5DEBD9E3C9622E92FE0B8413 /* Pods-Live Wallpapers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live Wallpapers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Live Wallpapers/Pods-Live Wallpapers.release.xcconfig"; sourceTree = "<group>"; };
 		A2B7F8406FC39921D0B5D483 /* Pods-Live Wallpapers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live Wallpapers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Live Wallpapers/Pods-Live Wallpapers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +75,8 @@
 		50D5775D1D911A390017A7FF /* Live Wallpapers */ = {
 			isa = PBXGroup;
 			children = (
+				50D577761D912E660017A7FF /* Common */,
+				50D577731D911EBF0017A7FF /* API */,
 				50D577701D911B460017A7FF /* Resources */,
 				50D5775E1D911A390017A7FF /* AppDelegate.swift */,
 				50D577601D911A390017A7FF /* ViewController.swift */,
@@ -88,6 +94,22 @@
 				50D577711D911B680017A7FF /* data.json */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		50D577731D911EBF0017A7FF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				50D577741D911EFD0017A7FF /* DownloadManager.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		50D577761D912E660017A7FF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				50D577771D912E7F0017A7FF /* Constants.swift */,
+			);
+			name = Common;
 			sourceTree = "<group>";
 		};
 		5B9063F80097B8C2AADD2F45 /* Pods */ = {
@@ -225,7 +247,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				50D577611D911A390017A7FF /* ViewController.swift in Sources */,
+				50D577751D911EFD0017A7FF /* DownloadManager.swift in Sources */,
 				50D5775F1D911A390017A7FF /* AppDelegate.swift in Sources */,
+				50D577781D912E7F0017A7FF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

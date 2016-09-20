@@ -1,0 +1,72 @@
+//
+//  DownloadManager.swift
+//  Live Wallpapers
+//
+//  Created by Nguyen Duc Phi on 9/20/16.
+//  Copyright © 2016 Nguyen Duc Phi. All rights reserved.
+//
+
+import UIKit
+import Alamofire
+
+class DownloadItem: NSObject {
+    var url: String = ""
+    var fileName: String?
+    var output_dir: String?
+}
+
+class DownloadManager: NSObject {
+    
+    class var sharedInstance: DownloadManager {
+        struct Singleton {
+            static let instance = DownloadManager.init()
+        }
+        return Singleton.instance
+    }
+    /* Get Document URL */
+    func getDocumentDirectory() -> URL{
+        return try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+    }
+    /* Create Downloaded folder if not exists */
+    fileprivate func createdFolderIfNotExists(_ path: String) -> Bool{
+        let documents = getDocumentDirectory()
+        if !checkFileExists(path){
+            do {
+                try FileManager.default.createDirectory(atPath: documents.appendingPathComponent(path).path, withIntermediateDirectories: false, attributes: nil)
+            } catch{
+                return false
+            }
+        }
+        return true
+    }
+    
+    /* Check File/Folder is exists */
+    func checkFileExists(_ path: String) -> Bool{
+        return FileManager.default.fileExists(atPath: getDocumentDirectory().appendingPathComponent(path).path)
+    }
+    
+    func downloadWith(_ item: DownloadItem, progressHandler: Request.ProgressHandler? = nil, completionHandler: @escaping (_ isSussess: Bool) -> ()) -> (){
+        
+        let destination: DownloadRequest.DownloadFileDestination = { url, response in
+            let target = Constants.DOWNLOAD_FOLDER + item.output_dir! + "/" + url.lastPathComponent
+            let documentsURL = self.getDocumentDirectory()
+            let fileURL = documentsURL.appendingPathComponent(target)
+            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+        }
+        
+        Alamofire.download(item.url, to: destination)
+            .downloadProgress { progress in
+                if progressHandler != nil{
+                    progressHandler!(progress)
+                }
+            }
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    completionHandler(true)
+                case .failure:
+                    completionHandler(false)
+                }
+        }
+    }
+}
