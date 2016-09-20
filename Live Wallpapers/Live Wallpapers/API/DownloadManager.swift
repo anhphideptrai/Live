@@ -33,9 +33,9 @@ class DownloadManager: NSObject {
         return try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
     }
     /* Create Downloaded folder if not exists */
-    fileprivate func createdFolderIfNotExists(_ path: String) -> Bool{
+    private func createdFolderIfNotExists(_ path: String) -> Bool{
         let documents = getDocumentDirectory()
-        if !checkFileExists(path){
+        if !checkFileExists(getDocumentDirectory().appendingPathComponent(path)){
             do {
                 try FileManager.default.createDirectory(atPath: documents.appendingPathComponent(path).path, withIntermediateDirectories: false, attributes: nil)
             } catch{
@@ -46,33 +46,41 @@ class DownloadManager: NSObject {
     }
     
     /* Check File/Folder is exists */
-    func checkFileExists(_ path: String) -> Bool{
-        return FileManager.default.fileExists(atPath: getDocumentDirectory().appendingPathComponent(path).path)
+    func checkFileExists(_ url: URL?) -> Bool{
+        if url != nil {
+            return FileManager.default.fileExists(atPath: url!.path)
+        }else{
+            return false
+        }
+        
     }
     
     func downloadWith(_ item: DownloadItem, progressHandler: Request.ProgressHandler? = nil, completionHandler: @escaping (_ isSussess: Bool, _ urlDestination: URL?) -> ()) -> (){
         
-        let destination: DownloadRequest.DownloadFileDestination = { url, response in
-            let target = Constants.DOWNLOAD_FOLDER + item.output_dir! + "/" + response.suggestedFilename!
-            let documentsURL = self.getDocumentDirectory()
-            let fileURL = documentsURL.appendingPathComponent(target)
-            return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
+        if !checkFileExists(urlLocalWith(item)) {
+            
+            let destination: DownloadRequest.DownloadFileDestination = { url, response in
+                return (self.urlLocalWith(item)!, [.removePreviousFile, .createIntermediateDirectories])
+            }
+            
+            Alamofire.download(item.url, to: destination)
+                .downloadProgress { progress in
+                    if progressHandler != nil{
+                        progressHandler!(progress)
+                    }
+                }
+                .responseData { response in
+                    switch response.result {
+                    case .success:
+                        completionHandler(true, response.destinationURL)
+                    case .failure:
+                        completionHandler(false, nil)
+                    }
+            }
+        }else{
+            completionHandler(true, urlLocalWith(item))
         }
         
-        Alamofire.download(item.url, to: destination)
-            .downloadProgress { progress in
-                if progressHandler != nil{
-                    progressHandler!(progress)
-                }
-            }
-            .responseData { response in
-                switch response.result {
-                case .success:
-                    completionHandler(true, response.destinationURL)
-                case .failure:
-                    completionHandler(false, nil)
-                }
-        }
     }
     
     private func loadData() -> (){
@@ -86,4 +94,10 @@ class DownloadManager: NSObject {
             })
         }
     }
+    
+    func urlLocalWith(_ item: DownloadItem) -> URL?{
+        let target = Constants.DOWNLOAD_FOLDER + item.output_dir! + "/" + item.url.components(separatedBy: "/").last!
+        return getDocumentDirectory().appendingPathComponent(target)
+    }
+    
 }

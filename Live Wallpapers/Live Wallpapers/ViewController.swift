@@ -18,7 +18,7 @@ class ViewController: UIViewController, LivePhotoCustomViewDelegate{
         super.viewDidLoad()
         livePhoto.delegate = self
         livePhoto.isUserInteractionEnabled = true
-        Timer.scheduledTimer(timeInterval: 12, target: self, selector: #selector(ViewController.test), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.test), userInfo: nil, repeats: false)
     }
     
     func dataForLivePhotoView() -> (urlVideo: URL?, urlImage: URL?) {
