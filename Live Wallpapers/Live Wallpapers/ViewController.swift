@@ -43,12 +43,12 @@ class ViewController: UIViewController, LivePhotoCustomViewDelegate{
         self.urlImage = URL.init(string: imgUrl)!
         self.livePhoto.reload()
         
-        DownloadManager.sharedInstance.downloadWith(item) { (isSussess, destinationURL) in
+        DownloadManager.sharedInstance.downloadWith(item) { (isSussess, destinationURL, tag) in
             if isSussess {
                 self.urlVideo   = destinationURL
                 item.output_dir = output
                 item.url        = imgUrl
-                DownloadManager.sharedInstance.downloadWith(item, completionHandler: { (isSussess, destinationURL) in
+                DownloadManager.sharedInstance.downloadWith(item, completionHandler: { (isSussess, destinationURL, tag) in
                     if isSussess {
                         self.urlImage = destinationURL
                         self.livePhoto.reload()

@@ -6,6 +6,7 @@ target 'Live Wallpapers' do
   use_frameworks!
   pod 'Alamofire', '~> 4.0'
   pod 'AlamofireImage', '~> 3.0'
+  pod 'iCarousel', '~> 1.8'
   # Pods for Live Wallpapers
 
 end
