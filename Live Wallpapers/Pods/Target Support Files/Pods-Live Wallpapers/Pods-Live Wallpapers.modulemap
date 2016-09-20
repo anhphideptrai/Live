@@ -1,6 +1,0 @@
-framework module Pods_Live_Wallpapers {
-  umbrella header "Pods-Live Wallpapers-umbrella.h"
-
-  export *
-  module * { export * }
-}
