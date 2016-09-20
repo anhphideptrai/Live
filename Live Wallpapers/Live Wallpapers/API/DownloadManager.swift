@@ -17,10 +17,15 @@ class DownloadItem: NSObject {
 
 class DownloadManager: NSObject {
     
+    var categories:NSArray      = []
+    var liveItems:NSDictionary  = [:]
+    private var loadedData      = false
+    
     class var sharedInstance: DownloadManager {
         struct Singleton {
             static let instance = DownloadManager.init()
         }
+        Singleton.instance.loadData()
         return Singleton.instance
     }
     /* Get Document URL */
@@ -67,6 +72,18 @@ class DownloadManager: NSObject {
                 case .failure:
                     completionHandler(false)
                 }
+        }
+    }
+    
+    private func loadData() -> (){
+        if !loadedData {
+            Alamofire.request(Bundle.main.url(forResource: "data", withExtension: "json")!).responseJSON(completionHandler: { (response) in
+                if let json = response.result.value as? [String: AnyObject] {
+                    self.loadedData = true
+                    self.categories = CategoryLive.parser(json["Categories"]! as AnyObject)
+                    self.liveItems = json["data"] as! NSDictionary
+                }
+            })
         }
     }
 }

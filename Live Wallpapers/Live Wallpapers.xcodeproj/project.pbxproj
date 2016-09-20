@@ -16,6 +16,8 @@
 		50D577751D911EFD0017A7FF /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D577741D911EFD0017A7FF /* DownloadManager.swift */; };
 		50D577781D912E7F0017A7FF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D577771D912E7F0017A7FF /* Constants.swift */; };
 		50D5777B1D9131650017A7FF /* LivePhotoCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5777A1D9131650017A7FF /* LivePhotoCustomView.swift */; };
+		50D5777F1D91362C0017A7FF /* CategoryLive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5777D1D91362C0017A7FF /* CategoryLive.swift */; };
+		50D577801D91362C0017A7FF /* LiveItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5777E1D91362C0017A7FF /* LiveItem.swift */; };
 		69525CADD0CEA0797ABDD09F /* Pods_Live_Wallpapers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5F7EB07752F9944CE09B21 /* Pods_Live_Wallpapers.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +34,8 @@
 		50D577741D911EFD0017A7FF /* DownloadManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DownloadManager.swift; path = API/DownloadManager.swift; sourceTree = "<group>"; };
 		50D577771D912E7F0017A7FF /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Common/Constants.swift; sourceTree = "<group>"; };
 		50D5777A1D9131650017A7FF /* LivePhotoCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LivePhotoCustomView.swift; path = Views/LivePhotoCustomView.swift; sourceTree = "<group>"; };
+		50D5777D1D91362C0017A7FF /* CategoryLive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryLive.swift; path = Model/CategoryLive.swift; sourceTree = "<group>"; };
+		50D5777E1D91362C0017A7FF /* LiveItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LiveItem.swift; path = Model/LiveItem.swift; sourceTree = "<group>"; };
 		5DEBD9E3C9622E92FE0B8413 /* Pods-Live Wallpapers.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live Wallpapers.release.xcconfig"; path = "Pods/Target Support Files/Pods-Live Wallpapers/Pods-Live Wallpapers.release.xcconfig"; sourceTree = "<group>"; };
 		A2B7F8406FC39921D0B5D483 /* Pods-Live Wallpapers.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live Wallpapers.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Live Wallpapers/Pods-Live Wallpapers.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +81,7 @@
 		50D5775D1D911A390017A7FF /* Live Wallpapers */ = {
 			isa = PBXGroup;
 			children = (
+				50D5777C1D9136210017A7FF /* Model */,
 				50D577791D9131510017A7FF /* Views */,
 				50D577761D912E660017A7FF /* Common */,
 				50D577731D911EBF0017A7FF /* API */,
@@ -121,6 +126,15 @@
 				50D5777A1D9131650017A7FF /* LivePhotoCustomView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		50D5777C1D9136210017A7FF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				50D5777D1D91362C0017A7FF /* CategoryLive.swift */,
+				50D5777E1D91362C0017A7FF /* LiveItem.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		5B9063F80097B8C2AADD2F45 /* Pods */ = {
@@ -259,9 +273,11 @@
 			files = (
 				50D577611D911A390017A7FF /* ViewController.swift in Sources */,
 				50D5777B1D9131650017A7FF /* LivePhotoCustomView.swift in Sources */,
+				50D577801D91362C0017A7FF /* LiveItem.swift in Sources */,
 				50D577751D911EFD0017A7FF /* DownloadManager.swift in Sources */,
 				50D5775F1D911A390017A7FF /* AppDelegate.swift in Sources */,
 				50D577781D912E7F0017A7FF /* Constants.swift in Sources */,
+				50D5777F1D91362C0017A7FF /* CategoryLive.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
