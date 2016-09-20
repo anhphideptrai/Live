@@ -50,10 +50,10 @@ class DownloadManager: NSObject {
         return FileManager.default.fileExists(atPath: getDocumentDirectory().appendingPathComponent(path).path)
     }
     
-    func downloadWith(_ item: DownloadItem, progressHandler: Request.ProgressHandler? = nil, completionHandler: @escaping (_ isSussess: Bool) -> ()) -> (){
+    func downloadWith(_ item: DownloadItem, progressHandler: Request.ProgressHandler? = nil, completionHandler: @escaping (_ isSussess: Bool, _ urlDestination: URL?) -> ()) -> (){
         
         let destination: DownloadRequest.DownloadFileDestination = { url, response in
-            let target = Constants.DOWNLOAD_FOLDER + item.output_dir! + "/" + url.lastPathComponent
+            let target = Constants.DOWNLOAD_FOLDER + item.output_dir! + "/" + response.suggestedFilename!
             let documentsURL = self.getDocumentDirectory()
             let fileURL = documentsURL.appendingPathComponent(target)
             return (fileURL, [.removePreviousFile, .createIntermediateDirectories])
@@ -68,9 +68,9 @@ class DownloadManager: NSObject {
             .responseData { response in
                 switch response.result {
                 case .success:
-                    completionHandler(true)
+                    completionHandler(true, response.destinationURL)
                 case .failure:
-                    completionHandler(false)
+                    completionHandler(false, nil)
                 }
         }
     }
