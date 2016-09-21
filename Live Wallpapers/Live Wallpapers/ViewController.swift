@@ -30,6 +30,7 @@ class ViewController: UIViewController{
         saveView.layer.borderColor               = UIColor.gray.cgColor
         saveView.layer.cornerRadius              = 30
         
+        updateTime()
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setupData), userInfo: nil, repeats: false)
         timerDate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
