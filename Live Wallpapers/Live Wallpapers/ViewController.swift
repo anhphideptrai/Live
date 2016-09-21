@@ -27,6 +27,7 @@ class ViewController: UIViewController{
         carouselView.dataSource = self
         carouselView.isPagingEnabled = true
         carouselView.bounces = false
+        delayLoadData()
     }
     
     func loadDataWith(){
@@ -62,6 +63,14 @@ class ViewController: UIViewController{
     func liveItemWith(idx: Int) -> LiveItem{
         return LiveItem.parser(DownloadManager.sharedInstance.liveItems[(category?.liveItemIds?[idx])!]! as AnyObject)
     }
+    
+    func delayLoadData(){
+        if timerLoad != nil {
+            timerLoad?.invalidate()
+            timerLoad = nil
+        }
+        timerLoad = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(loadDataWith), userInfo: nil, repeats: false)
+    }
 }
 
 extension ViewController: iCarouselDataSource, iCarouselDelegate{
@@ -89,11 +98,7 @@ extension ViewController: iCarouselDataSource, iCarouselDelegate{
     }
     
     func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
-        if timerLoad != nil {
-            timerLoad?.invalidate()
-            timerLoad = nil
-        }
-        timerLoad = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(loadDataWith), userInfo: nil, repeats: false)
+        delayLoadData()
     }
     
     func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {
@@ -101,6 +106,10 @@ extension ViewController: iCarouselDataSource, iCarouselDelegate{
             return 3
         }
         return value
+    }
+    func carouselWillBeginDragging(_ carousel: iCarousel) {
+        let livePhoto = carousel.currentItemView as! LivePhotoCustomView
+        livePhoto.livePhotoView?.stopPlayback()
     }
 }
 
