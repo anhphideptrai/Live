@@ -55,7 +55,7 @@ class DownloadManager: NSObject {
         
     }
     
-    func downloadWith(_ item: DownloadItem, progressHandler: Request.ProgressHandler? = nil, tag: UInt = 0, completionHandler: @escaping (_ isSussess: Bool, _ urlDestination: URL?, _ tag: UInt) -> ()) -> (){
+    func downloadWith(_ item: DownloadItem, progressHandler: Request.ProgressHandler? = nil, tag: Int = 0, completionHandler: @escaping (_ isSussess: Bool, _ urlDestination: URL?, _ tag: Int) -> ()) -> (){
         
         if !checkFileExists(urlLocalWith(item)) {
             

@@ -11,14 +11,10 @@ import Photos
 import PhotosUI
 import AlamofireImage
 
-protocol LivePhotoCustomViewDelegate {
-    func dataForLivePhotoView() -> (urlVideo: URL?, urlImage: URL?)
-}
 class LivePhotoCustomView: UIView {
     
     var livePhotoView:PHLivePhotoView?
     var imgView:UIImageView?
-    var delegate:LivePhotoCustomViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -68,20 +64,20 @@ class LivePhotoCustomView: UIView {
         self.addConstraint(leftContraints)
         self.addConstraint(rightontraints)
     }
+
+    func loadLivePhotoWith(uRLPhoto: URL?, uRLVideo: URL?){
+        if (uRLPhoto != nil && uRLVideo != nil) {
+            PHLivePhoto.request(withResourceFileURLs: [uRLVideo!, uRLPhoto!], placeholderImage: nil, targetSize: CGSize.zero, contentMode: .aspectFill, resultHandler: { (livePhoto, infoDict) in
+                self.livePhotoView?.livePhoto = livePhoto
+                self.livePhotoView?.startPlayback(with: PHLivePhotoViewPlaybackStyle.full)
+            })
+        }
+    }
     
-    func reload(){
-        if delegate != nil {
-            let urlImage = delegate?.dataForLivePhotoView().urlImage
-            let urlVideo = delegate?.dataForLivePhotoView().urlVideo
-            if (urlImage != nil) {
-                imgView?.af_setImage(withURL: urlImage!)
-            }
-            if (urlImage != nil && urlVideo != nil) {
-                PHLivePhoto.request(withResourceFileURLs: [urlVideo!, urlImage!], placeholderImage: nil, targetSize: CGSize.zero, contentMode: .aspectFill, resultHandler: { (livePhoto, infoDict) in
-                    self.livePhotoView?.livePhoto = livePhoto
-                    self.livePhotoView?.startPlayback(with: PHLivePhotoViewPlaybackStyle.full)
-                })
-            }
+    func loadPhotoWith(uRLPhoto: URL?){
+        imgView?.image = nil
+        if uRLPhoto != nil {
+            imgView?.af_setImage(withURL: uRLPhoto!)
         }
     }
 }

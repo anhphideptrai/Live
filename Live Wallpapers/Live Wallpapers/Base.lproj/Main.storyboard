@@ -14,20 +14,34 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="LivePhotoCustomView" customModule="Live_Wallpapers" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMU-7B-tYm" customClass="iCarousel">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lMU-7B-tYm" secondAttribute="bottom" id="LeJ-E4-WBb"/>
+                            <constraint firstAttribute="trailing" secondItem="lMU-7B-tYm" secondAttribute="trailing" id="cQa-rc-Afs"/>
+                            <constraint firstItem="lMU-7B-tYm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dt6-q4-IFv"/>
+                            <constraint firstItem="lMU-7B-tYm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wTU-z8-RHs"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="livePhoto" destination="8bC-Xf-vdC" id="uFx-pn-xxw"/>
+                        <outlet property="carouselView" destination="lMU-7B-tYm" id="LNq-zC-9H9"/>
+                        <outlet property="view" destination="8bC-Xf-vdC" id="JVs-hq-LZd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="109.29535232383809"/>
         </scene>
     </scenes>
 </document>
