@@ -15,11 +15,20 @@ class ViewController: UIViewController{
     @IBOutlet weak var carouselView:    iCarousel!
     var timerLoad:                      Timer?
     var timerDate:                      Timer?
+    var hideControls:                   Bool    = false
     
     @IBOutlet weak var lbTime: UILabel!
     @IBOutlet weak var lbDate: UILabel!
+    @IBOutlet weak var saveView: UIView!
+    @IBOutlet weak var btnSave: UIButton!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        saveView.layer.masksToBounds             = true
+        saveView.layer.borderWidth               = 1
+        saveView.layer.borderColor               = UIColor.gray.cgColor
+        saveView.layer.cornerRadius              = 25
         
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setupData), userInfo: nil, repeats: false)
         timerDate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
@@ -80,6 +89,17 @@ class ViewController: UIViewController{
         }
         timerLoad = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(loadDataWith), userInfo: nil, repeats: false)
     }
+    
+    func showHideControls() -> () {
+        hideControls        = !hideControls
+        lbTime.isHidden     = hideControls
+        lbDate.isHidden     = hideControls
+        saveView.isHidden   = hideControls
+    }
+    
+    @IBAction func saveAction(_ sender: AnyObject) {
+        
+    }
 }
 
 extension ViewController: iCarouselDataSource, iCarouselDelegate{
@@ -115,6 +135,9 @@ extension ViewController: iCarouselDataSource, iCarouselDelegate{
             return 3
         }
         return value
+    }
+    func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
+        showHideControls()
     }
     func carouselWillBeginDragging(_ carousel: iCarousel) {
         let livePhoto = carousel.currentItemView as! LivePhotoCustomView
