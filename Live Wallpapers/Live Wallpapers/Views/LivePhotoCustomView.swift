@@ -33,6 +33,7 @@ class LivePhotoCustomView: UIView {
         imgView?.backgroundColor = UIColor.clear
         
         livePhotoView = PHLivePhotoView.init()
+        livePhotoView?.isMuted = true
         
         self.addSubview(imgView!)
         self.addSubview(livePhotoView!)
@@ -68,14 +69,17 @@ class LivePhotoCustomView: UIView {
     func loadLivePhotoWith(uRLPhoto: URL?, uRLVideo: URL?){
         if (uRLPhoto != nil && uRLVideo != nil) {
             PHLivePhoto.request(withResourceFileURLs: [uRLVideo!, uRLPhoto!], placeholderImage: nil, targetSize: CGSize.zero, contentMode: .aspectFill, resultHandler: { (livePhoto, infoDict) in
+                self.livePhotoView?.isHidden = false
                 self.livePhotoView?.livePhoto = livePhoto
-                self.livePhotoView?.startPlayback(with: PHLivePhotoViewPlaybackStyle.full)
+                self.livePhotoView?.startPlayback(with: .full)
             })
         }
     }
     
     func loadPhotoWith(uRLPhoto: URL?){
         imgView?.image = nil
+        livePhotoView?.stopPlayback()
+        livePhotoView?.isHidden = true
         if uRLPhoto != nil {
             imgView?.af_setImage(withURL: uRLPhoto!)
         }

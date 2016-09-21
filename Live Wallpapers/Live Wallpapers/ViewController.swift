@@ -13,6 +13,7 @@ class ViewController: UIViewController{
 
     var category:                       CategoryLive?
     @IBOutlet weak var carouselView:    iCarousel!
+    var timerLoad:                      Timer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,18 +22,23 @@ class ViewController: UIViewController{
     }
 
     func setupData(){
-        category                = DownloadManager.sharedInstance.categories[3] as? CategoryLive
+        category                = DownloadManager.sharedInstance.categories[7] as? CategoryLive
         carouselView.delegate   = self
         carouselView.dataSource = self
         carouselView.isPagingEnabled = true
         carouselView.bounces = false
     }
     
-    func loadDataWith(uRLStringPhoto: String, uRLStringVideo: String, tag: Int) -> (){
-    
+    func loadDataWith(){
+        
+        let tag         = carouselView.currentItemIndex
+        let liveItem    = liveItemWith(idx: tag)
+        let imgUrl      = Constants.SERVER_DATA + liveItem.category + "/" + liveItem.image
+        let videoUrl    = Constants.SERVER_DATA + liveItem.category + "/" + liveItem.video
+        
         let item        = DownloadItem()
         item.output_dir = category?.name
-        item.url        = uRLStringVideo
+        item.url        = videoUrl
 
         DownloadManager.sharedInstance.downloadWith(item, progressHandler: {progress in
             print("Download Progress: \(Int(progress.fractionCompleted * 100))")
@@ -40,7 +46,7 @@ class ViewController: UIViewController{
             if isSussess {
                 let urlVideo   = destinationURL
                 item.output_dir = self.category?.name
-                item.url        = uRLStringPhoto
+                item.url        = imgUrl
                 DownloadManager.sharedInstance.downloadWith(item, tag: tag, completionHandler: { (isSussess, destinationURL, tag) in
                     if isSussess {
                         let urlImage = destinationURL
@@ -83,10 +89,11 @@ extension ViewController: iCarouselDataSource, iCarouselDelegate{
     }
     
     func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
-        let liveItem    = liveItemWith(idx: carousel.currentItemIndex)
-        let imgUrl      = Constants.SERVER_DATA + liveItem.category + "/" + liveItem.image
-        let videoUrl    = Constants.SERVER_DATA + liveItem.category + "/" + liveItem.video
-        loadDataWith(uRLStringPhoto: imgUrl, uRLStringVideo: videoUrl, tag: carousel.currentItemIndex)
+        if timerLoad != nil {
+            timerLoad?.invalidate()
+            timerLoad = nil
+        }
+        timerLoad = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(loadDataWith), userInfo: nil, repeats: false)
     }
     
     func carousel(_ carousel: iCarousel, valueFor option: iCarouselOption, withDefault value: CGFloat) -> CGFloat {

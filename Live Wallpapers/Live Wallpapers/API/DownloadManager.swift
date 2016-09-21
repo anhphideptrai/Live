@@ -20,6 +20,7 @@ class DownloadManager: NSObject {
     var categories:NSArray      = []
     var liveItems:NSDictionary  = [:]
     private var loadedData      = false
+    var download: DownloadRequest?
     
     class var sharedInstance: DownloadManager {
         struct Singleton {
@@ -63,13 +64,18 @@ class DownloadManager: NSObject {
                 return (self.urlLocalWith(item)!, [.removePreviousFile, .createIntermediateDirectories])
             }
             
-            Alamofire.download(item.url, to: destination)
+            if download != nil{
+                download?.cancel()
+            }
+            
+            download = Alamofire.download(item.url, to: destination)
                 .downloadProgress { progress in
                     if progressHandler != nil{
                         progressHandler!(progress)
                     }
                 }
-                .responseData { response in
+                
+                download?.responseData { response in
                     switch response.result {
                     case .success:
                         completionHandler(true, response.destinationURL, tag)
