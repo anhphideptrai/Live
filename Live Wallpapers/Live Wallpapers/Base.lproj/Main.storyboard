@@ -5,6 +5,14 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-UI-Display-Regular.otf">
+            <string>SFUIDisplay-Regular</string>
+        </array>
+        <array key="SF-UI-Display-Ultralight.otf">
+            <string>SFUIDisplay-Ultralight</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -21,13 +29,35 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMU-7B-tYm" customClass="iCarousel">
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4:30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVA-YW-Uyn">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="Aoy-yc-dhn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Ultralight" family="SF UI Display" pointSize="80"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, August 29" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bS3-zy-hxp">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="z84-SI-sKQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Regular" family="SF UI Display" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bS3-zy-hxp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6gd-Un-tmD"/>
+                            <constraint firstItem="BVA-YW-Uyn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EXC-AR-rIr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lMU-7B-tYm" secondAttribute="bottom" id="LeJ-E4-WBb"/>
+                            <constraint firstItem="BVA-YW-Uyn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="U48-3V-QuE"/>
+                            <constraint firstAttribute="trailing" secondItem="bS3-zy-hxp" secondAttribute="trailing" id="VKZ-0A-rJa"/>
                             <constraint firstAttribute="trailing" secondItem="lMU-7B-tYm" secondAttribute="trailing" id="cQa-rc-Afs"/>
+                            <constraint firstAttribute="trailing" secondItem="BVA-YW-Uyn" secondAttribute="trailing" id="dXQ-I8-2gj"/>
                             <constraint firstItem="lMU-7B-tYm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dt6-q4-IFv"/>
                             <constraint firstItem="lMU-7B-tYm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wTU-z8-RHs"/>
+                            <constraint firstItem="bS3-zy-hxp" firstAttribute="top" secondItem="BVA-YW-Uyn" secondAttribute="bottom" id="ycG-yT-tmP"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -36,6 +66,8 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="carouselView" destination="lMU-7B-tYm" id="LNq-zC-9H9"/>
+                        <outlet property="lbDate" destination="bS3-zy-hxp" id="k4C-EJ-t8d"/>
+                        <outlet property="lbTime" destination="BVA-YW-Uyn" id="ucV-DP-BhD"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="JVs-hq-LZd"/>
                     </connections>
                 </viewController>

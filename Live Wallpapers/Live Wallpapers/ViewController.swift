@@ -14,13 +14,17 @@ class ViewController: UIViewController{
     var category:                       CategoryLive?
     @IBOutlet weak var carouselView:    iCarousel!
     var timerLoad:                      Timer?
+    var timerDate:                      Timer?
     
+    @IBOutlet weak var lbTime: UILabel!
+    @IBOutlet weak var lbDate: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setupData), userInfo: nil, repeats: false)
+        timerDate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
-
+    
     func setupData(){
         category                = DownloadManager.sharedInstance.categories[7] as? CategoryLive
         carouselView.delegate   = self
@@ -28,6 +32,11 @@ class ViewController: UIViewController{
         carouselView.isPagingEnabled = true
         carouselView.bounces = false
         delayLoadData()
+    }
+    
+    func updateTime(){
+        lbTime.text = dateToTimeStringWith(date: Date())
+        lbDate.text = dateToDateStringWith(date: Date())
     }
     
     func loadDataWith(){

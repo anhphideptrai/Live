@@ -13,6 +13,7 @@
 		5089FD3C1D92CA950080DFDD /* SF-UI-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD361D92CA950080DFDD /* SF-UI-Display-Regular.otf */; };
 		5089FD3D1D92CA950080DFDD /* SF-UI-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD371D92CA950080DFDD /* SF-UI-Display-Thin.otf */; };
 		5089FD3E1D92CA950080DFDD /* SF-UI-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD381D92CA950080DFDD /* SF-UI-Display-Ultralight.otf */; };
+		5089FD401D92CF500080DFDD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089FD3F1D92CF500080DFDD /* Utils.swift */; };
 		50D5775F1D911A390017A7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5775E1D911A390017A7FF /* AppDelegate.swift */; };
 		50D577611D911A390017A7FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D577601D911A390017A7FF /* ViewController.swift */; };
 		50D577641D911A390017A7FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D577621D911A390017A7FF /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 		5089FD361D92CA950080DFDD /* SF-UI-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Regular.otf"; path = "Resources/Fonts/SF-UI-Display-Regular.otf"; sourceTree = "<group>"; };
 		5089FD371D92CA950080DFDD /* SF-UI-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Thin.otf"; path = "Resources/Fonts/SF-UI-Display-Thin.otf"; sourceTree = "<group>"; };
 		5089FD381D92CA950080DFDD /* SF-UI-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Ultralight.otf"; path = "Resources/Fonts/SF-UI-Display-Ultralight.otf"; sourceTree = "<group>"; };
+		5089FD3F1D92CF500080DFDD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Common/Utils.swift; sourceTree = "<group>"; };
 		50D5775B1D911A390017A7FF /* Live Wallpapers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live Wallpapers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D5775E1D911A390017A7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50D577601D911A390017A7FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,19 @@
 				0E5F7EB07752F9944CE09B21 /* Pods_Live_Wallpapers.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5089FD411D92E08D0080DFDD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5089FD331D92CA950080DFDD /* SF-UI-Display-Bold.otf */,
+				5089FD341D92CA950080DFDD /* SF-UI-Display-Light.otf */,
+				5089FD351D92CA950080DFDD /* SF-UI-Display-Medium.otf */,
+				5089FD361D92CA950080DFDD /* SF-UI-Display-Regular.otf */,
+				5089FD371D92CA950080DFDD /* SF-UI-Display-Thin.otf */,
+				5089FD381D92CA950080DFDD /* SF-UI-Display-Ultralight.otf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		50D577521D911A390017A7FF = {
@@ -111,12 +126,7 @@
 		50D577701D911B460017A7FF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5089FD331D92CA950080DFDD /* SF-UI-Display-Bold.otf */,
-				5089FD341D92CA950080DFDD /* SF-UI-Display-Light.otf */,
-				5089FD351D92CA950080DFDD /* SF-UI-Display-Medium.otf */,
-				5089FD361D92CA950080DFDD /* SF-UI-Display-Regular.otf */,
-				5089FD371D92CA950080DFDD /* SF-UI-Display-Thin.otf */,
-				5089FD381D92CA950080DFDD /* SF-UI-Display-Ultralight.otf */,
+				5089FD411D92E08D0080DFDD /* Fonts */,
 				50D577711D911B680017A7FF /* data.json */,
 			);
 			name = Resources;
@@ -134,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				50D577771D912E7F0017A7FF /* Constants.swift */,
+				5089FD3F1D92CF500080DFDD /* Utils.swift */,
 			);
 			name = Common;
 			sourceTree = "<group>";
@@ -302,6 +313,7 @@
 				50D5775F1D911A390017A7FF /* AppDelegate.swift in Sources */,
 				50D577781D912E7F0017A7FF /* Constants.swift in Sources */,
 				50D5777F1D91362C0017A7FF /* CategoryLive.swift in Sources */,
+				5089FD401D92CF500080DFDD /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
