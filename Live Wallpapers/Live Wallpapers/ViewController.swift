@@ -28,7 +28,7 @@ class ViewController: UIViewController{
         saveView.layer.masksToBounds             = true
         saveView.layer.borderWidth               = 1
         saveView.layer.borderColor               = UIColor.gray.cgColor
-        saveView.layer.cornerRadius              = 25
+        saveView.layer.cornerRadius              = 30
         
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setupData), userInfo: nil, repeats: false)
         timerDate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
