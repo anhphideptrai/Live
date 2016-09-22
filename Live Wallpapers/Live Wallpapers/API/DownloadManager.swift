@@ -29,32 +29,6 @@ class DownloadManager: NSObject {
         Singleton.instance.loadData()
         return Singleton.instance
     }
-    /* Get Document URL */
-    func getDocumentDirectory() -> URL{
-        return try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-    }
-    /* Create Downloaded folder if not exists */
-    private func createdFolderIfNotExists(_ path: String) -> Bool{
-        let documents = getDocumentDirectory()
-        if !checkFileExists(getDocumentDirectory().appendingPathComponent(path)){
-            do {
-                try FileManager.default.createDirectory(atPath: documents.appendingPathComponent(path).path, withIntermediateDirectories: false, attributes: nil)
-            } catch{
-                return false
-            }
-        }
-        return true
-    }
-    
-    /* Check File/Folder is exists */
-    func checkFileExists(_ url: URL?) -> Bool{
-        if url != nil {
-            return FileManager.default.fileExists(atPath: url!.path)
-        }else{
-            return false
-        }
-        
-    }
     
     func downloadWith(_ item: DownloadItem, progressHandler: Request.ProgressHandler? = nil, tag: Int = 0, completionHandler: @escaping (_ isSussess: Bool, _ urlDestination: URL?, _ tag: Int) -> ()) -> (){
         
@@ -103,7 +77,7 @@ class DownloadManager: NSObject {
     
     func urlLocalWith(_ item: DownloadItem) -> URL?{
         let target = Constants.DOWNLOAD_FOLDER + item.output_dir! + "/" + item.url.components(separatedBy: "/").last!
-        return getDocumentDirectory().appendingPathComponent(target)
+        return urlLocal(target)
     }
     
 }

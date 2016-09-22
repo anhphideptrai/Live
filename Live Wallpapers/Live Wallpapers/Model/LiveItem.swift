@@ -20,4 +20,25 @@ class LiveItem: NSObject {
         item.video = js["video"] as! String
         return item
     }
+    
+    func urlLocalImage() -> URL?{
+        let target = Constants.DOWNLOAD_FOLDER + category + "/" + image.components(separatedBy: "/").last!
+        return urlLocal(target)
+    }
+    
+    func urlLocalVideo() -> URL?{
+        let target = Constants.DOWNLOAD_FOLDER + category + "/" + video.components(separatedBy: "/").last!
+        return urlLocal(target)
+    }
+    
+    func urlImage() -> URL? {
+        let url = Constants.SERVER_DATA + category + "/" + image
+        return URL.init(string: url)
+    }
+
+    func urlVideo() -> URL? {
+        let url = Constants.SERVER_DATA + category + "/" + video
+        return URL.init(string: url)
+    }
+    
 }

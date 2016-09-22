@@ -8,7 +8,24 @@
 
 import UIKit
 
+/* Get Document URL */
+func getDocumentDirectory() -> URL{
+    return try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+}
 
+func urlLocal(_ path: String) -> URL?{
+    return getDocumentDirectory().appendingPathComponent(path)
+}
+
+/* Check File/Folder is exists */
+func checkFileExists(_ url: URL?) -> Bool{
+    if url != nil {
+        return FileManager.default.fileExists(atPath: url!.path)
+    }else{
+        return false
+    }
+    
+}
 
 func dateToTimeStringWith(date: Date) -> String{
     let dateformatter       = DateFormatter()

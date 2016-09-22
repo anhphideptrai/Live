@@ -120,9 +120,12 @@ extension ViewController: iCarouselDataSource, iCarouselDelegate{
         }
         
         let liveItem = liveItemWith(idx: index)
-        let imgUrl      = Constants.SERVER_DATA + liveItem.category + "/" + liveItem.image
         
-        itemView.loadPhotoWith(uRLPhoto: URL.init(string: imgUrl)!)
+        if checkFileExists(liveItem.urlLocalImage()) {
+            itemView.loadPhotoWith(uRLPhoto: liveItem.urlLocalImage())
+        }else{
+            itemView.loadPhotoWith(uRLPhoto: liveItem.urlImage())
+        }
         
         return itemView
     }
