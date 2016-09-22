@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>All Live Wallpapers</string>
+	<string>TheNewest</string>
+	<string>Recent</string>
+	<string>Abstract</string>
+	<string>Animals</string>
+	<string>Celebration</string>
+	<string>Fire</string>
+	<string>Flowers</string>
+	<string>Misc</string>
+	<string>Nature</string>
+	<string>Particles</string>
+	<string>Sky</string>
+	<string>Snow</string>
+	<string>Space</string>
+	<string>Sports</string>
+	<string>Timelapse</string>
+	<string>Urban</string>
+	<string>Water</string>
+</array>
+</plist>

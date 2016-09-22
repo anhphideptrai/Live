@@ -14,6 +14,7 @@
 		5089FD3D1D92CA950080DFDD /* SF-UI-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD371D92CA950080DFDD /* SF-UI-Display-Thin.otf */; };
 		5089FD3E1D92CA950080DFDD /* SF-UI-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD381D92CA950080DFDD /* SF-UI-Display-Ultralight.otf */; };
 		5089FD401D92CF500080DFDD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089FD3F1D92CF500080DFDD /* Utils.swift */; };
+		5089FD431D9389D80080DFDD /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD421D9389D80080DFDD /* categories.plist */; };
 		50D5775F1D911A390017A7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5775E1D911A390017A7FF /* AppDelegate.swift */; };
 		50D577611D911A390017A7FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D577601D911A390017A7FF /* ViewController.swift */; };
 		50D577641D911A390017A7FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D577621D911A390017A7FF /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 		5089FD371D92CA950080DFDD /* SF-UI-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Thin.otf"; path = "Resources/Fonts/SF-UI-Display-Thin.otf"; sourceTree = "<group>"; };
 		5089FD381D92CA950080DFDD /* SF-UI-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Ultralight.otf"; path = "Resources/Fonts/SF-UI-Display-Ultralight.otf"; sourceTree = "<group>"; };
 		5089FD3F1D92CF500080DFDD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Common/Utils.swift; sourceTree = "<group>"; };
+		5089FD421D9389D80080DFDD /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = categories.plist; path = Resources/categories.plist; sourceTree = "<group>"; };
 		50D5775B1D911A390017A7FF /* Live Wallpapers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live Wallpapers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D5775E1D911A390017A7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50D577601D911A390017A7FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				5089FD411D92E08D0080DFDD /* Fonts */,
 				50D577711D911B680017A7FF /* data.json */,
+				5089FD421D9389D80080DFDD /* categories.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5089FD431D9389D80080DFDD /* categories.plist in Resources */,
 				50D577691D911A390017A7FF /* LaunchScreen.storyboard in Resources */,
 				5089FD391D92CA950080DFDD /* SF-UI-Display-Bold.otf in Resources */,
 				5089FD3B1D92CA950080DFDD /* SF-UI-Display-Medium.otf in Resources */,

@@ -11,11 +11,14 @@ import UIKit
 class CategoryLive: NSObject {
     var name: String = ""
     var liveItemIds: NSArray?
-    
+    static func categoryNames() -> NSArray{
+        let plistPath = Bundle.main.path(forResource: "categories", ofType: "plist")
+        return NSArray.init(contentsOfFile: plistPath!)!
+    }
     static func parser(_ categoriesJs: AnyObject) -> NSArray{
         let result: NSMutableArray = NSMutableArray()
         let categories: NSDictionary = categoriesJs as! [NSDictionary: AnyObject] as NSDictionary
-        for key in categories.allKeys {
+        for key in categoryNames() {
             let categoryLive: CategoryLive = CategoryLive()
             categoryLive.name = key as! String
             categoryLive.liveItemIds = NSArray.init(array: categories[categoryLive.name] as! NSArray)
