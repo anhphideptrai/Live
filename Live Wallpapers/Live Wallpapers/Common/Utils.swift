@@ -44,3 +44,27 @@ func showAlertWith(title: String? = Constants.Messages.MSG_TITLE_ALERT, message:
     alert.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: nil))
     viewController.present(alert, animated: true, completion: nil)
 }
+
+func addConstraintForView(_ subView: UIView, _ parent: UIView){
+    subView.translatesAutoresizingMaskIntoConstraints = false
+    let topContraints = NSLayoutConstraint(item: subView, attribute:
+        .top, relatedBy: .equal, toItem: parent,
+              attribute: .top, multiplier: 1.0,
+              constant: 0)
+    let bottomContraints  = NSLayoutConstraint(item: subView, attribute:
+        .bottom, relatedBy: .equal, toItem: parent,
+                 attribute: .bottom, multiplier: 1.0,
+                 constant: 0)
+    let leftContraints  = NSLayoutConstraint(item: subView, attribute:
+        .left, relatedBy: .equal, toItem: parent,
+               attribute: .left, multiplier: 1.0,
+               constant: 0)
+    let rightontraints  = NSLayoutConstraint(item: subView, attribute:
+        .right, relatedBy: .equal, toItem: parent,
+                attribute: .right, multiplier: 1.0,
+                constant: 0)
+    parent.addConstraint(topContraints)
+    parent.addConstraint(bottomContraints)
+    parent.addConstraint(leftContraints)
+    parent.addConstraint(rightontraints)
+}
