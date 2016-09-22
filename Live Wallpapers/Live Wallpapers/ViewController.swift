@@ -8,6 +8,7 @@
 
 import UIKit
 import iCarousel
+import Photos
 
 class ViewController: UIViewController{
 
@@ -53,12 +54,10 @@ class ViewController: UIViewController{
         
         let tag         = carouselView.currentItemIndex
         let liveItem    = liveItemWith(idx: tag)
-        let imgUrl      = Constants.SERVER_DATA + liveItem.category + "/" + liveItem.image
-        let videoUrl    = Constants.SERVER_DATA + liveItem.category + "/" + liveItem.video
         
         let item        = DownloadItem()
         item.output_dir = category?.name
-        item.url        = videoUrl
+        item.url        = liveItem.urlStringVideo()
 
         DownloadManager.sharedInstance.downloadWith(item, progressHandler: {progress in
             print("Download Progress: \(Int(progress.fractionCompleted * 100))")
@@ -66,7 +65,7 @@ class ViewController: UIViewController{
             if isSussess {
                 let urlVideo   = destinationURL
                 item.output_dir = self.category?.name
-                item.url        = imgUrl
+                item.url        = liveItem.urlStringImage()
                 DownloadManager.sharedInstance.downloadWith(item, tag: tag, completionHandler: { (isSussess, destinationURL, tag) in
                     if isSussess {
                         let urlImage = destinationURL
@@ -99,7 +98,25 @@ class ViewController: UIViewController{
     }
     
     @IBAction func saveAction(_ sender: AnyObject) {
-        
+        let currentLiveItem = liveItemWith(idx: carouselView.currentItemIndex)
+        if checkFileExists(currentLiveItem.urlLocalImage()) && checkFileExists(currentLiveItem.urlLocalVideo()){
+            PHPhotoLibrary.requestAuthorization({ status in
+                if status == .authorized {
+                    PHPhotoLibrary.shared().performChanges({
+                        let request = PHAssetCreationRequest.creationRequestForAssetFromImage(atFileURL: currentLiveItem.urlLocalImage()!)
+                        request?.addResource(with: .pairedVideo, fileURL: currentLiveItem.urlLocalVideo()!, options: nil)
+                    }) { (success, error) in
+                        if success {
+                            print("OK")
+                        }else{
+                            print("NOT OK")
+                        }
+                    }
+                }else{
+                    print("NOT Authorized")
+                }
+            })
+        }
     }
 }
 

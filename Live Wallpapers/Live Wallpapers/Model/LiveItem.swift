@@ -32,13 +32,18 @@ class LiveItem: NSObject {
     }
     
     func urlImage() -> URL? {
-        let url = Constants.SERVER_DATA + category + "/" + image
-        return URL.init(string: url)
+        return URL.init(string: urlStringImage())
     }
 
     func urlVideo() -> URL? {
-        let url = Constants.SERVER_DATA + category + "/" + video
-        return URL.init(string: url)
+        return URL.init(string: urlStringVideo())
     }
     
+    func urlStringImage() -> String {
+        return Constants.SERVER_DATA + category + "/" + image
+    }
+    
+    func urlStringVideo() -> String {
+        return Constants.SERVER_DATA + category + "/" + video
+    }
 }
