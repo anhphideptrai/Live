@@ -76,12 +76,68 @@
                                             <constraint firstAttribute="trailing" secondItem="QfQ-Ar-fv3" secondAttribute="trailing" id="zc7-XW-4zN"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sr9-aC-Iyi">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RAe-JQ-5Zm">
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DfN-j3-Uyk"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ppv-4T-L2B">
+                                                <subviews>
+                                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLx-lF-CUH">
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jbv-SZ-t1e">
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <state key="normal" image="arrow">
+                                                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="backAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iwP-5B-o28"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstItem="jbv-SZ-t1e" firstAttribute="leading" secondItem="ppv-4T-L2B" secondAttribute="leading" constant="5" id="1Kl-cD-o6o"/>
+                                                    <constraint firstItem="aLx-lF-CUH" firstAttribute="top" secondItem="ppv-4T-L2B" secondAttribute="top" id="6yy-JX-MKf"/>
+                                                    <constraint firstAttribute="bottom" secondItem="aLx-lF-CUH" secondAttribute="bottom" id="9Mf-A8-5FF"/>
+                                                    <constraint firstAttribute="trailing" secondItem="jbv-SZ-t1e" secondAttribute="trailing" constant="5" id="FJR-LR-Czs"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aLx-lF-CUH" secondAttribute="trailing" id="GaH-A0-blP"/>
+                                                    <constraint firstAttribute="height" constant="30" id="Kvk-5e-vCZ"/>
+                                                    <constraint firstItem="aLx-lF-CUH" firstAttribute="leading" secondItem="ppv-4T-L2B" secondAttribute="leading" id="dNY-az-eUH"/>
+                                                    <constraint firstAttribute="width" constant="30" id="hRa-ao-QVi"/>
+                                                    <constraint firstItem="jbv-SZ-t1e" firstAttribute="top" secondItem="ppv-4T-L2B" secondAttribute="top" constant="5" id="jQm-LV-MRP"/>
+                                                    <constraint firstAttribute="bottom" secondItem="jbv-SZ-t1e" secondAttribute="bottom" constant="5" id="raP-pl-TI0"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="RAe-JQ-5Zm" secondAttribute="bottom" id="2NG-NL-SoR"/>
+                                            <constraint firstItem="RAe-JQ-5Zm" firstAttribute="leading" secondItem="sr9-aC-Iyi" secondAttribute="leading" id="DyR-8G-Gev"/>
+                                            <constraint firstAttribute="width" constant="70" id="IHj-wY-KfR"/>
+                                            <constraint firstItem="ppv-4T-L2B" firstAttribute="centerX" secondItem="sr9-aC-Iyi" secondAttribute="centerX" id="Mz7-Pu-Wds"/>
+                                            <constraint firstItem="RAe-JQ-5Zm" firstAttribute="top" secondItem="sr9-aC-Iyi" secondAttribute="top" id="YYw-F0-EvC"/>
+                                            <constraint firstAttribute="trailing" secondItem="RAe-JQ-5Zm" secondAttribute="trailing" id="ZtW-nG-xaf"/>
+                                            <constraint firstItem="ppv-4T-L2B" firstAttribute="centerY" secondItem="sr9-aC-Iyi" secondAttribute="centerY" id="pdy-V9-9j3"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="SBc-zr-Gy8" firstAttribute="centerY" secondItem="Qsj-10-hKB" secondAttribute="centerY" id="2JY-PC-u3A"/>
+                                    <constraint firstAttribute="bottom" secondItem="sr9-aC-Iyi" secondAttribute="bottom" id="6qm-uW-mnC"/>
                                     <constraint firstAttribute="height" constant="70" id="JgO-6j-ScC"/>
+                                    <constraint firstItem="sr9-aC-Iyi" firstAttribute="top" secondItem="Qsj-10-hKB" secondAttribute="top" id="SQB-7J-J33"/>
                                     <constraint firstItem="SBc-zr-Gy8" firstAttribute="centerX" secondItem="Qsj-10-hKB" secondAttribute="centerX" id="a2k-9m-t61"/>
+                                    <constraint firstItem="sr9-aC-Iyi" firstAttribute="leading" secondItem="Qsj-10-hKB" secondAttribute="leading" id="xwH-YT-AMJ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLv-Jf-Yaj">
@@ -128,6 +184,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="backHideView" destination="sr9-aC-Iyi" id="Hia-UC-J7x"/>
+                        <outlet property="backView" destination="ppv-4T-L2B" id="13a-Y7-Xgp"/>
                         <outlet property="btnSave" destination="QfQ-Ar-fv3" id="YAX-r5-qxe"/>
                         <outlet property="carouselView" destination="lMU-7B-tYm" id="LNq-zC-9H9"/>
                         <outlet property="lbDate" destination="bS3-zy-hxp" id="k4C-EJ-t8d"/>
@@ -142,4 +200,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="109.29535232383809"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="arrow" width="180" height="180"/>
+    </resources>
 </document>

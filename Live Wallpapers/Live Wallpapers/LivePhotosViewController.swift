@@ -22,6 +22,8 @@ class LivePhotosViewController: UIViewController{
     @IBOutlet weak var lbDate: UILabel!
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var backHideView: UIView!
     @IBOutlet weak var progressView: UIProgressView!
     
     override func viewDidLoad() {
@@ -32,6 +34,12 @@ class LivePhotosViewController: UIViewController{
         saveView.layer.borderWidth               = 1
         saveView.layer.borderColor               = UIColor.gray.cgColor
         saveView.layer.cornerRadius              = 30
+        
+        backView.layer.masksToBounds             = true
+        backView.layer.borderWidth               = 1
+        backView.layer.borderColor               = UIColor.gray.cgColor
+        backView.layer.cornerRadius              = 15
+
         
         updateTime()
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setupData), userInfo: nil, repeats: false)
@@ -95,10 +103,11 @@ class LivePhotosViewController: UIViewController{
     }
     
     func showHideControls() -> () {
-        hideControls        = !hideControls
-        lbTime.isHidden     = hideControls
-        lbDate.isHidden     = hideControls
-        saveView.isHidden   = hideControls
+        hideControls            = !hideControls
+        lbTime.isHidden         = hideControls
+        lbDate.isHidden         = hideControls
+        saveView.isHidden       = hideControls
+        backHideView.isHidden   = hideControls
     }
     
     @IBAction func saveAction(_ sender: AnyObject) {
@@ -123,6 +132,10 @@ class LivePhotosViewController: UIViewController{
         }else{
             showAlertWith(message: Constants.Messages.MSG_NEED_DOWNLOAD, viewController: self)
         }
+    }
+    
+    @IBAction func backAction(_ sender: AnyObject) {
+        
     }
 }
 
