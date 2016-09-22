@@ -12,13 +12,13 @@ import Photos
 
 class LivePhotosViewController: UIViewController{
 
-    public var category:                CategoryLive?
+    public var liveItems                        = [LiveItem]()
     public var firstItemIndex:          Int     = 0
+    public var frameCarousel:           CGRect?
     
     private var timerLoad:              Timer?
     private var timerDate:              Timer?
     private var hideControls:           Bool    = false
-    
     
     @IBOutlet weak var carouselView:    iCarousel!
     @IBOutlet weak var lbTime:          UILabel!
@@ -42,23 +42,23 @@ class LivePhotosViewController: UIViewController{
         backView.layer.borderWidth               = 1
         backView.layer.borderColor               = UIColor.gray.cgColor
         backView.layer.cornerRadius              = 15
-
         
         updateTime()
-        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(setupData), userInfo: nil, repeats: false)
         timerDate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupData()
+    }
+    
     func setupData(){
-        if category == nil {
-            category    = DownloadManager.sharedInstance.categories[0] as? CategoryLive
-        }
         carouselView.delegate   = self
         carouselView.dataSource = self
         carouselView.isPagingEnabled = true
         carouselView.bounces = false
         carouselView.currentItemIndex = firstItemIndex
-        delayLoadData()
+        loadData()
     }
     
     func updateTime(){
@@ -66,37 +66,35 @@ class LivePhotosViewController: UIViewController{
         lbDate.text = dateToDateStringWith(date: Date())
     }
     
-    func loadDataWith(){
+    func loadData(){
         
-        let tag         = carouselView.currentItemIndex
-        let liveItem    = liveItemWith(idx: tag)
-        
-        let item        = DownloadItem()
-        item.output_dir = category?.name
-        item.url        = liveItem.urlStringVideo()
-
-        DownloadManager.sharedInstance.downloadWith(item, progressHandler: {progress in
-            self.progressView.progress = Float(progress.fractionCompleted)
-        }, tag: tag) { (isSussess, destinationURL, tag) in
-            if isSussess {
-                let urlVideo   = destinationURL
-                item.output_dir = self.category?.name
-                item.url        = liveItem.urlStringImage()
-                DownloadManager.sharedInstance.downloadWith(item, tag: tag, completionHandler: { (isSussess, destinationURL, tag) in
-                    if isSussess {
-                        let urlImage = destinationURL
-                        if tag == self.carouselView.currentItemIndex {
-                            (self.carouselView.currentItemView as! LivePhotoCustomView).loadLivePhotoWith(uRLPhoto: urlImage, uRLVideo: urlVideo)
+        let tag = carouselView.currentItemIndex
+        if tag < liveItems.count {
+            let liveItem    = liveItems[tag]
+            
+            let item        = DownloadItem()
+            item.output_dir = liveItem.category
+            item.url        = liveItem.urlStringVideo()
+            
+            DownloadManager.sharedInstance.downloadWith(item, progressHandler: {progress in
+                self.progressView.progress = Float(progress.fractionCompleted)
+            }, tag: tag) { (isSussess, destinationURL, tag) in
+                if isSussess {
+                    let urlVideo   = destinationURL
+                    item.output_dir = liveItem.category
+                    item.url        = liveItem.urlStringImage()
+                    DownloadManager.sharedInstance.downloadWith(item, tag: tag, completionHandler: { (isSussess, destinationURL, tag) in
+                        if isSussess {
+                            let urlImage = destinationURL
+                            if tag == self.carouselView.currentItemIndex {
+                                (self.carouselView.currentItemView as! LivePhotoCustomView).loadLivePhotoWith(uRLPhoto: urlImage, uRLVideo: urlVideo)
+                            }
                         }
-                    }
-                })
+                    })
+                }
+                self.progressView.progress = 0
             }
-            self.progressView.progress = 0
         }
-    }
-    
-    func liveItemWith(idx: Int) -> LiveItem{
-        return LiveItem.parser(DownloadManager.sharedInstance.liveItems[(category?.liveItemIds?[idx])!]! as AnyObject)
     }
     
     func delayLoadData(){
@@ -105,7 +103,7 @@ class LivePhotosViewController: UIViewController{
             timerLoad = nil
         }
         progressView.progress = 0
-        timerLoad = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(loadDataWith), userInfo: nil, repeats: false)
+        timerLoad = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(loadData), userInfo: nil, repeats: false)
     }
     
     func showHideControls() -> () {
@@ -117,7 +115,7 @@ class LivePhotosViewController: UIViewController{
     }
     
     @IBAction func saveAction(_ sender: AnyObject) {
-        let currentLiveItem = liveItemWith(idx: carouselView.currentItemIndex)
+        let currentLiveItem = liveItems[carouselView.currentItemIndex]
         if checkFileExists(currentLiveItem.urlLocalImage()) && checkFileExists(currentLiveItem.urlLocalVideo()){
             PHPhotoLibrary.requestAuthorization({ status in
                 if status == .authorized {
@@ -163,7 +161,7 @@ class LivePhotosViewController: UIViewController{
 extension LivePhotosViewController: iCarouselDataSource, iCarouselDelegate{
     
     func numberOfItems(in carousel: iCarousel) -> Int {
-        return (category?.liveItemIds?.count)!
+        return liveItems.count
     }
     
     func carousel(_ carousel: iCarousel, viewForItemAt index: Int, reusing view: UIView?) -> UIView {
@@ -171,12 +169,13 @@ extension LivePhotosViewController: iCarouselDataSource, iCarouselDelegate{
         var itemView: LivePhotoCustomView
         if (view == nil)
         {
-            itemView = LivePhotoCustomView.init(frame: carousel.frame)
+            itemView = LivePhotoCustomView()
         }else{
             itemView = view as! LivePhotoCustomView
         }
         
-        let liveItem = liveItemWith(idx: index)
+        itemView.frame = frameCarousel != nil ? frameCarousel! : carousel.frame
+        let liveItem = liveItems[index]
         
         if checkFileExists(liveItem.urlLocalImage()) {
             itemView.loadPhotoWith(uRLPhoto: liveItem.urlLocalImage())

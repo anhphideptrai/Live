@@ -15,6 +15,7 @@
 		5089FD3E1D92CA950080DFDD /* SF-UI-Display-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD381D92CA950080DFDD /* SF-UI-Display-Ultralight.otf */; };
 		5089FD401D92CF500080DFDD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089FD3F1D92CF500080DFDD /* Utils.swift */; };
 		5089FD431D9389D80080DFDD /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD421D9389D80080DFDD /* categories.plist */; };
+		5089FD451D93D4590080DFDD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089FD441D93D4590080DFDD /* HomeViewController.swift */; };
 		50D5775F1D911A390017A7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5775E1D911A390017A7FF /* AppDelegate.swift */; };
 		50D577611D911A390017A7FF /* LivePhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D577601D911A390017A7FF /* LivePhotosViewController.swift */; };
 		50D577641D911A390017A7FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D577621D911A390017A7FF /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		5089FD381D92CA950080DFDD /* SF-UI-Display-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Ultralight.otf"; path = "Resources/Fonts/SF-UI-Display-Ultralight.otf"; sourceTree = "<group>"; };
 		5089FD3F1D92CF500080DFDD /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = Common/Utils.swift; sourceTree = "<group>"; };
 		5089FD421D9389D80080DFDD /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = categories.plist; path = Resources/categories.plist; sourceTree = "<group>"; };
+		5089FD441D93D4590080DFDD /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
 		50D5775B1D911A390017A7FF /* Live Wallpapers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live Wallpapers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D5775E1D911A390017A7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50D577601D911A390017A7FF /* LivePhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotosViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,15 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		5089FD461D93D46B0080DFDD /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5089FD441D93D4590080DFDD /* HomeViewController.swift */,
+				50D577601D911A390017A7FF /* LivePhotosViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		50D577521D911A390017A7FF = {
 			isa = PBXGroup;
 			children = (
@@ -115,8 +126,8 @@
 				50D577761D912E660017A7FF /* Common */,
 				50D577731D911EBF0017A7FF /* API */,
 				50D577701D911B460017A7FF /* Resources */,
+				5089FD461D93D46B0080DFDD /* ViewControllers */,
 				50D5775E1D911A390017A7FF /* AppDelegate.swift */,
-				50D577601D911A390017A7FF /* LivePhotosViewController.swift */,
 				50D577621D911A390017A7FF /* Main.storyboard */,
 				50D577651D911A390017A7FF /* Assets.xcassets */,
 				50D577671D911A390017A7FF /* LaunchScreen.storyboard */,
@@ -315,6 +326,7 @@
 				50D577801D91362C0017A7FF /* LiveItem.swift in Sources */,
 				50D577751D911EFD0017A7FF /* DownloadManager.swift in Sources */,
 				50D5775F1D911A390017A7FF /* AppDelegate.swift in Sources */,
+				5089FD451D93D4590080DFDD /* HomeViewController.swift in Sources */,
 				50D577781D912E7F0017A7FF /* Constants.swift in Sources */,
 				50D5777F1D91362C0017A7FF /* CategoryLive.swift in Sources */,
 				5089FD401D92CF500080DFDD /* Utils.swift in Sources */,
