@@ -12,19 +12,22 @@ import Photos
 
 class LivePhotosViewController: UIViewController{
 
-    var category:                       CategoryLive?
-    @IBOutlet weak var carouselView:    iCarousel!
-    var timerLoad:                      Timer?
-    var timerDate:                      Timer?
-    var hideControls:                   Bool    = false
+    public var category:                CategoryLive?
+    public var firstItemIndex:          Int     = 0
     
-    @IBOutlet weak var lbTime: UILabel!
-    @IBOutlet weak var lbDate: UILabel!
-    @IBOutlet weak var saveView: UIView!
-    @IBOutlet weak var btnSave: UIButton!
-    @IBOutlet weak var backView: UIView!
-    @IBOutlet weak var backHideView: UIView!
-    @IBOutlet weak var progressView: UIProgressView!
+    private var timerLoad:              Timer?
+    private var timerDate:              Timer?
+    private var hideControls:           Bool    = false
+    
+    
+    @IBOutlet weak var carouselView:    iCarousel!
+    @IBOutlet weak var lbTime:          UILabel!
+    @IBOutlet weak var lbDate:          UILabel!
+    @IBOutlet weak var saveView:        UIView!
+    @IBOutlet weak var btnSave:         UIButton!
+    @IBOutlet weak var backView:        UIView!
+    @IBOutlet weak var backHideView:    UIView!
+    @IBOutlet weak var progressView:    UIProgressView!
     
     override func viewDidLoad() {
         
@@ -47,11 +50,14 @@ class LivePhotosViewController: UIViewController{
     }
     
     func setupData(){
-        category                = DownloadManager.sharedInstance.categories[0] as? CategoryLive
+        if category == nil {
+            category    = DownloadManager.sharedInstance.categories[0] as? CategoryLive
+        }
         carouselView.delegate   = self
         carouselView.dataSource = self
         carouselView.isPagingEnabled = true
         carouselView.bounces = false
+        carouselView.currentItemIndex = firstItemIndex
         delayLoadData()
     }
     
@@ -135,6 +141,21 @@ class LivePhotosViewController: UIViewController{
     }
     
     @IBAction func backAction(_ sender: AnyObject) {
+        
+        if timerDate != nil {
+            timerDate?.invalidate()
+            timerDate = nil
+        }
+        if timerLoad != nil {
+            timerLoad?.invalidate()
+            timerLoad = nil
+        }
+        
+        if DownloadManager.sharedInstance.download != nil {
+            DownloadManager.sharedInstance.download?.cancel()
+        }
+        
+        presentingViewController?.dismiss(animated: true, completion: nil)
         
     }
 }
