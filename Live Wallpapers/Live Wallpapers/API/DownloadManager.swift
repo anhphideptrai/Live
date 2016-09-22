@@ -32,14 +32,14 @@ class DownloadManager: NSObject {
     
     func downloadWith(_ item: DownloadItem, progressHandler: Request.ProgressHandler? = nil, tag: Int = 0, completionHandler: @escaping (_ isSussess: Bool, _ urlDestination: URL?, _ tag: Int) -> ()) -> (){
         
+        if download != nil{
+            download?.cancel()
+        }
+        
         if !checkFileExists(urlLocalWith(item)) {
             
             let destination: DownloadRequest.DownloadFileDestination = { url, response in
                 return (self.urlLocalWith(item)!, [.removePreviousFile, .createIntermediateDirectories])
-            }
-            
-            if download != nil{
-                download?.cancel()
             }
             
             download = Alamofire.download(item.url, to: destination)

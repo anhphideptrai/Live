@@ -90,10 +90,20 @@
                                     <constraint firstAttribute="height" id="eY1-6i-MYr"/>
                                 </constraints>
                             </view>
+                            <progressView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RZQ-8A-paE">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="zpO-Qx-5R3"/>
+                                </constraints>
+                                <color key="progressTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="trackTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="mLv-Jf-Yaj" secondAttribute="trailing" id="1wK-C6-VcJ"/>
+                            <constraint firstItem="RZQ-8A-paE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="64G-wF-ffY"/>
                             <constraint firstItem="bS3-zy-hxp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="6gd-Un-tmD"/>
                             <constraint firstItem="Qsj-10-hKB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9EC-dL-Kar"/>
                             <constraint firstItem="BVA-YW-Uyn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EXC-AR-rIr"/>
@@ -102,8 +112,10 @@
                             <constraint firstItem="BVA-YW-Uyn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="U48-3V-QuE"/>
                             <constraint firstAttribute="trailing" secondItem="bS3-zy-hxp" secondAttribute="trailing" id="VKZ-0A-rJa"/>
                             <constraint firstAttribute="trailing" secondItem="Qsj-10-hKB" secondAttribute="trailing" id="Zvb-o3-Ezr"/>
+                            <constraint firstAttribute="trailing" secondItem="RZQ-8A-paE" secondAttribute="trailing" id="ary-SP-LEB"/>
                             <constraint firstAttribute="trailing" secondItem="lMU-7B-tYm" secondAttribute="trailing" id="cQa-rc-Afs"/>
                             <constraint firstAttribute="trailing" secondItem="BVA-YW-Uyn" secondAttribute="trailing" id="dXQ-I8-2gj"/>
+                            <constraint firstItem="RZQ-8A-paE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="dsh-Ug-2q5"/>
                             <constraint firstItem="lMU-7B-tYm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="dt6-q4-IFv"/>
                             <constraint firstItem="mLv-Jf-Yaj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="oQ3-gT-K04"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qsj-10-hKB" secondAttribute="bottom" constant="20" id="t0b-pk-TDV"/>
@@ -120,6 +132,7 @@
                         <outlet property="carouselView" destination="lMU-7B-tYm" id="LNq-zC-9H9"/>
                         <outlet property="lbDate" destination="bS3-zy-hxp" id="k4C-EJ-t8d"/>
                         <outlet property="lbTime" destination="BVA-YW-Uyn" id="ucV-DP-BhD"/>
+                        <outlet property="progressView" destination="RZQ-8A-paE" id="UNl-Ie-eYU"/>
                         <outlet property="saveView" destination="SBc-zr-Gy8" id="XER-wf-d9q"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="JVs-hq-LZd"/>
                     </connections>

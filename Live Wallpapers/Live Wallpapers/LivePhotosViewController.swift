@@ -22,6 +22,8 @@ class LivePhotosViewController: UIViewController{
     @IBOutlet weak var lbDate: UILabel!
     @IBOutlet weak var saveView: UIView!
     @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var progressView: UIProgressView!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -37,7 +39,7 @@ class LivePhotosViewController: UIViewController{
     }
     
     func setupData(){
-        category                = DownloadManager.sharedInstance.categories[7] as? CategoryLive
+        category                = DownloadManager.sharedInstance.categories[0] as? CategoryLive
         carouselView.delegate   = self
         carouselView.dataSource = self
         carouselView.isPagingEnabled = true
@@ -60,7 +62,7 @@ class LivePhotosViewController: UIViewController{
         item.url        = liveItem.urlStringVideo()
 
         DownloadManager.sharedInstance.downloadWith(item, progressHandler: {progress in
-            print("Download Progress: \(Int(progress.fractionCompleted * 100))")
+            self.progressView.progress = Float(progress.fractionCompleted)
         }, tag: tag) { (isSussess, destinationURL, tag) in
             if isSussess {
                 let urlVideo   = destinationURL
@@ -75,6 +77,7 @@ class LivePhotosViewController: UIViewController{
                     }
                 })
             }
+            self.progressView.progress = 0
         }
     }
     
@@ -87,6 +90,7 @@ class LivePhotosViewController: UIViewController{
             timerLoad?.invalidate()
             timerLoad = nil
         }
+        progressView.progress = 0
         timerLoad = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(loadDataWith), userInfo: nil, repeats: false)
     }
     
