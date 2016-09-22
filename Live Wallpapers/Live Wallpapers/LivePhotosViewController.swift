@@ -45,10 +45,6 @@ class LivePhotosViewController: UIViewController{
         
         updateTime()
         timerDate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         setupData()
     }
     

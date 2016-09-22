@@ -26,6 +26,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYc-y4-kUV">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="LLb-tA-ipc"/>
+                                </constraints>
+                            </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-bh-xV6">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="kdG-hG-nLJ">
@@ -39,10 +45,13 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wBC-bh-xV6" firstAttribute="top" secondItem="VyT-Ne-dUi" secondAttribute="top" id="NOZ-9o-SBh"/>
+                            <constraint firstItem="wBC-bh-xV6" firstAttribute="top" secondItem="EYc-y4-kUV" secondAttribute="bottom" id="5H8-pV-eNj"/>
+                            <constraint firstItem="EYc-y4-kUV" firstAttribute="top" secondItem="VyT-Ne-dUi" secondAttribute="top" id="72m-Lg-ulh"/>
                             <constraint firstItem="KQ6-jK-3ZG" firstAttribute="top" secondItem="wBC-bh-xV6" secondAttribute="bottom" id="WUH-Hh-urm"/>
                             <constraint firstAttribute="trailing" secondItem="wBC-bh-xV6" secondAttribute="trailing" id="ef9-Ib-ijo"/>
                             <constraint firstItem="wBC-bh-xV6" firstAttribute="leading" secondItem="VyT-Ne-dUi" secondAttribute="leading" id="jl2-WM-16O"/>
+                            <constraint firstItem="EYc-y4-kUV" firstAttribute="leading" secondItem="VyT-Ne-dUi" secondAttribute="leading" id="oPV-k3-ogh"/>
+                            <constraint firstAttribute="trailing" secondItem="EYc-y4-kUV" secondAttribute="trailing" id="ssA-wS-Mp0"/>
                         </constraints>
                     </view>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -52,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3k-oQ-HAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-820" y="110"/>
+            <point key="canvasLocation" x="-820" y="109.29535232383809"/>
         </scene>
         <!--Live Photos View Controller-->
         <scene sceneID="tne-QT-ifu">
