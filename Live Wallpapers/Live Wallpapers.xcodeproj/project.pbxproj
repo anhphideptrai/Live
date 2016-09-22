@@ -16,7 +16,7 @@
 		5089FD401D92CF500080DFDD /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089FD3F1D92CF500080DFDD /* Utils.swift */; };
 		5089FD431D9389D80080DFDD /* categories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD421D9389D80080DFDD /* categories.plist */; };
 		50D5775F1D911A390017A7FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D5775E1D911A390017A7FF /* AppDelegate.swift */; };
-		50D577611D911A390017A7FF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D577601D911A390017A7FF /* ViewController.swift */; };
+		50D577611D911A390017A7FF /* LivePhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D577601D911A390017A7FF /* LivePhotosViewController.swift */; };
 		50D577641D911A390017A7FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D577621D911A390017A7FF /* Main.storyboard */; };
 		50D577661D911A390017A7FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50D577651D911A390017A7FF /* Assets.xcassets */; };
 		50D577691D911A390017A7FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50D577671D911A390017A7FF /* LaunchScreen.storyboard */; };
@@ -41,7 +41,7 @@
 		5089FD421D9389D80080DFDD /* categories.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = categories.plist; path = Resources/categories.plist; sourceTree = "<group>"; };
 		50D5775B1D911A390017A7FF /* Live Wallpapers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live Wallpapers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		50D5775E1D911A390017A7FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50D577601D911A390017A7FF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		50D577601D911A390017A7FF /* LivePhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LivePhotosViewController.swift; sourceTree = "<group>"; };
 		50D577631D911A390017A7FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50D577651D911A390017A7FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50D577681D911A390017A7FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 				50D577731D911EBF0017A7FF /* API */,
 				50D577701D911B460017A7FF /* Resources */,
 				50D5775E1D911A390017A7FF /* AppDelegate.swift */,
-				50D577601D911A390017A7FF /* ViewController.swift */,
+				50D577601D911A390017A7FF /* LivePhotosViewController.swift */,
 				50D577621D911A390017A7FF /* Main.storyboard */,
 				50D577651D911A390017A7FF /* Assets.xcassets */,
 				50D577671D911A390017A7FF /* LaunchScreen.storyboard */,
@@ -310,7 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50D577611D911A390017A7FF /* ViewController.swift in Sources */,
+				50D577611D911A390017A7FF /* LivePhotosViewController.swift in Sources */,
 				50D5777B1D9131650017A7FF /* LivePhotoCustomView.swift in Sources */,
 				50D577801D91362C0017A7FF /* LiveItem.swift in Sources */,
 				50D577751D911EFD0017A7FF /* DownloadManager.swift in Sources */,

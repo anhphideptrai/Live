@@ -24,7 +24,6 @@ func checkFileExists(_ url: URL?) -> Bool{
     }else{
         return false
     }
-    
 }
 
 func dateToTimeStringWith(date: Date) -> String{
@@ -38,4 +37,10 @@ func dateToDateStringWith(date: Date) -> String{
     dateformatter.dateFormat = "EEEE, MMMM dd"
     dateformatter.locale = Locale.current
     return dateformatter.string(from: date)
+}
+
+func showAlertWith(title: String? = Constants.Messages.MSG_TITLE_ALERT, message: String?, cancelTitle: String? = Constants.Messages.MSG_OK, viewController: UIViewController) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: nil))
+    viewController.present(alert, animated: true, completion: nil)
 }

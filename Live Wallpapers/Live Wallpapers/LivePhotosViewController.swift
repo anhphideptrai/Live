@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LivePhotosViewController.swift
 //  Live Wallpapers
 //
 //  Created by Nguyen Duc Phi on 9/20/16.
@@ -10,7 +10,7 @@ import UIKit
 import iCarousel
 import Photos
 
-class ViewController: UIViewController{
+class LivePhotosViewController: UIViewController{
 
     var category:                       CategoryLive?
     @IBOutlet weak var carouselView:    iCarousel!
@@ -107,20 +107,22 @@ class ViewController: UIViewController{
                         request?.addResource(with: .pairedVideo, fileURL: currentLiveItem.urlLocalVideo()!, options: nil)
                     }) { (success, error) in
                         if success {
-                            print("OK")
+                            showAlertWith(message: Constants.Messages.MSG_SAVE_SUSSESS, viewController: self)
                         }else{
-                            print("NOT OK")
+                            showAlertWith(message: Constants.Messages.MSG_CANNOT_SAVE, viewController: self)
                         }
                     }
                 }else{
-                    print("NOT Authorized")
+                    showAlertWith(message: Constants.Messages.MSG_NEED_ACCESS_PHOTOS, viewController: self)
                 }
             })
+        }else{
+            showAlertWith(message: Constants.Messages.MSG_NEED_DOWNLOAD, viewController: self)
         }
     }
 }
 
-extension ViewController: iCarouselDataSource, iCarouselDelegate{
+extension LivePhotosViewController: iCarouselDataSource, iCarouselDelegate{
     
     func numberOfItems(in carousel: iCarousel) -> Int {
         return (category?.liveItemIds?.count)!
