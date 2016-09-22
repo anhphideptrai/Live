@@ -12,7 +12,9 @@ class HomeViewController: UIViewController {
 
     public var category: CategoryLive?
     public var liveItemsSelected = [LiveItem]()
-    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var lbCategoryTitle: UILabel!
+    @IBOutlet weak var collectionView:  UICollectionView!
     
     override func viewDidLoad() {
         
@@ -24,7 +26,8 @@ class HomeViewController: UIViewController {
     }
     
     func setupDataWith(categoriesIdx: Int = 0){
-        category = DownloadManager.sharedInstance.categories[9] as? CategoryLive
+        category = DownloadManager.sharedInstance.categories[0] as? CategoryLive
+        lbCategoryTitle.text = category?.name
         liveItemsSelected.removeAll()
         for liveItemId in (category?.liveItemIds)! {
             liveItemsSelected.append(LiveItem.parser(DownloadManager.sharedInstance.liveItems[liveItemId] as AnyObject))

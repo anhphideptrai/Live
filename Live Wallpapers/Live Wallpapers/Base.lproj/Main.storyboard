@@ -6,6 +6,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="SF-UI-Display-Bold.otf">
+            <string>SFUIDisplay-Bold</string>
+        </array>
         <array key="SF-UI-Display-Regular.otf">
             <string>SFUIDisplay-Regular</string>
         </array>
@@ -27,9 +30,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EYc-y4-kUV">
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L2R-b0-kuE">
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="l70-Hm-Hc1"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ylg-Gb-FVn">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="Upw-GS-drQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="SFUIDisplay-Bold" family="SF UI Display" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.070588235294117646" green="0.070588235294117646" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="Ylg-Gb-FVn" firstAttribute="leading" secondItem="EYc-y4-kUV" secondAttribute="leading" id="GUw-5F-nwm"/>
+                                    <constraint firstItem="L2R-b0-kuE" firstAttribute="leading" secondItem="EYc-y4-kUV" secondAttribute="leading" id="JV6-Vk-t3u"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ylg-Gb-FVn" secondAttribute="bottom" id="KEe-BR-U7y"/>
                                     <constraint firstAttribute="height" constant="64" id="LLb-tA-ipc"/>
+                                    <constraint firstAttribute="trailing" secondItem="L2R-b0-kuE" secondAttribute="trailing" id="aaS-31-sje"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ylg-Gb-FVn" secondAttribute="trailing" id="dTG-t3-GHK"/>
+                                    <constraint firstAttribute="bottom" secondItem="L2R-b0-kuE" secondAttribute="bottom" id="tlF-sw-ltF"/>
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wBC-bh-xV6">
@@ -57,6 +82,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="collectionView" destination="wBC-bh-xV6" id="lt6-a6-jmT"/>
+                        <outlet property="lbCategoryTitle" destination="Ylg-Gb-FVn" id="Lsz-tq-eWF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d3k-oQ-HAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
