@@ -3,17 +3,20 @@ PODS:
   - AlamofireImage (3.0.0):
     - Alamofire (~> 4.0)
   - iCarousel (1.8.2)
+  - SlideMenuControllerSwift (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - AlamofireImage (~> 3.0)
   - iCarousel (~> 1.8)
+  - SlideMenuControllerSwift (~> 3.0)
 
 SPEC CHECKSUMS:
   Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
   AlamofireImage: 6594aa1139a67dcd36cde6da79ea4e5b318e60fb
   iCarousel: 67c8a43da5a46795b56aadfc96cd36a16f6149b2
+  SlideMenuControllerSwift: 9c0a84f9a3fba51681debd7be77617094562ebcc
 
-PODFILE CHECKSUM: 4c943f28057a9def71f57ee1c0127a271b03cde4
+PODFILE CHECKSUM: eeb17fb2bc142b0d57dfc28517170fbfa69b6bde
 
 COCOAPODS: 1.1.0.rc.2
