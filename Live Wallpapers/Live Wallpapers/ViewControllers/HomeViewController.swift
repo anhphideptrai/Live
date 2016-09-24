@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SlideMenuControllerSwift
 
 class HomeViewController: UIViewController {
 
@@ -19,14 +20,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCollectionViewCell")
-        
-        Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(setupDataWith), userInfo: nil, repeats: false)
+        setupData()
     }
     
-    func setupDataWith(categoriesIdx: Int = 0){
-        category = DownloadManager.sharedInstance.categories[0] as? CategoryLive
+    func setupData(){
+        category = DownloadManager.sharedInstance.categories[DownloadManager.sharedInstance.currentIdxCategory] as? CategoryLive
         lbCategoryTitle.text = category?.name
         liveItemsSelected.removeAll()
         for liveItemId in (category?.liveItemIds)! {
@@ -43,6 +42,9 @@ class HomeViewController: UIViewController {
         livePhotosCV.liveItems      = liveItemsSelected
         livePhotosCV.frameCarousel  = view.frame
         present(livePhotosCV, animated: true, completion: nil)
+    }
+    @IBAction func menuAction(_ sender: AnyObject) {
+        self.slideMenuController()?.openLeft()
     }
 }
 
@@ -72,5 +74,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         openLivePhotosWith(selectedIdx: indexPath.row)
+    }
+}
+
+extension HomeViewController: SlideMenuControllerDelegate {
+    func leftDidClose() {
+        if DownloadManager.sharedInstance.lastIdxCategory != DownloadManager.sharedInstance.currentIdxCategory {
+            DownloadManager.sharedInstance.lastIdxCategory = DownloadManager.sharedInstance.currentIdxCategory
+            setupData()
+        }
+        
     }
 }

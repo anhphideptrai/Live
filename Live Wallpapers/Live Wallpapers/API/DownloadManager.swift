@@ -19,6 +19,8 @@ class DownloadManager: NSObject {
     
     var categories:NSArray      = []
     var liveItems:NSDictionary  = [:]
+    var currentIdxCategory: Int = 0
+    var lastIdxCategory: Int    = 0
     private var loadedData      = false
     var download: DownloadRequest?
     
@@ -26,7 +28,6 @@ class DownloadManager: NSObject {
         struct Singleton {
             static let instance = DownloadManager.init()
         }
-        Singleton.instance.loadData()
         return Singleton.instance
     }
     
@@ -63,13 +64,14 @@ class DownloadManager: NSObject {
         
     }
     
-    private func loadData() -> (){
+    func loadData(_ finished: @escaping () -> ()) -> (){
         if !loadedData {
             Alamofire.request(Bundle.main.url(forResource: "data", withExtension: "json")!).responseJSON(completionHandler: { (response) in
                 if let json = response.result.value as? [String: AnyObject] {
                     self.loadedData = true
                     self.categories = CategoryLive.parser(json["Categories"]! as AnyObject)
                     self.liveItems = json["data"] as! NSDictionary
+                    finished()
                 }
             })
         }

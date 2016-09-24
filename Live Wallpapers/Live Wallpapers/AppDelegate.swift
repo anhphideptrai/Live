@@ -16,21 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Load data
-        let _ = DownloadManager.sharedInstance
-        createMenuView()
         return true
     }
     
-    fileprivate func createMenuView() {
+    func createMenuView() {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewControllerIdentity") as! HomeViewController
         let leftViewController = storyboard.instantiateViewController(withIdentifier: "LeftViewControllerIdentity") as! LeftViewController
-        let rightViewController = storyboard.instantiateViewController(withIdentifier: "RightViewControllerIdentity") as! RightViewController
         
-        let slideMenuController = SlideMenuController(mainViewController: homeViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
+        let slideMenuController = SlideMenuController(mainViewController: homeViewController, leftMenuViewController: leftViewController)
+        slideMenuController.delegate = homeViewController
         SlideMenuOptions.contentViewScale = 1
         SlideMenuOptions.hideStatusBar = false
         self.window?.rootViewController = slideMenuController
