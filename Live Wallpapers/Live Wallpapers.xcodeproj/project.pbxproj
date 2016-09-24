@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		500711351D94CFD5003B4289 /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500711341D94CFD5003B4289 /* LeftViewController.swift */; };
 		505641251D966BE100505EDE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505641241D966BE100505EDE /* SplashViewController.swift */; };
+		505641291D96775300505EDE /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505641271D96775300505EDE /* CategoryCell.swift */; };
+		5056412A1D96775300505EDE /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 505641281D96775300505EDE /* CategoryCell.xib */; };
 		5089FD391D92CA950080DFDD /* SF-UI-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD331D92CA950080DFDD /* SF-UI-Display-Bold.otf */; };
 		5089FD3A1D92CA950080DFDD /* SF-UI-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD341D92CA950080DFDD /* SF-UI-Display-Light.otf */; };
 		5089FD3B1D92CA950080DFDD /* SF-UI-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5089FD351D92CA950080DFDD /* SF-UI-Display-Medium.otf */; };
@@ -37,6 +39,8 @@
 		0E5F7EB07752F9944CE09B21 /* Pods_Live_Wallpapers.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Live_Wallpapers.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		500711341D94CFD5003B4289 /* LeftViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeftViewController.swift; path = ViewControllers/LeftViewController.swift; sourceTree = "<group>"; };
 		505641241D966BE100505EDE /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = ViewControllers/SplashViewController.swift; sourceTree = "<group>"; };
+		505641271D96775300505EDE /* CategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoryCell.swift; path = Cells/CategoryCell.swift; sourceTree = "<group>"; };
+		505641281D96775300505EDE /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CategoryCell.xib; path = Cells/CategoryCell.xib; sourceTree = "<group>"; };
 		5089FD331D92CA950080DFDD /* SF-UI-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Bold.otf"; path = "Resources/Fonts/SF-UI-Display-Bold.otf"; sourceTree = "<group>"; };
 		5089FD341D92CA950080DFDD /* SF-UI-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Light.otf"; path = "Resources/Fonts/SF-UI-Display-Light.otf"; sourceTree = "<group>"; };
 		5089FD351D92CA950080DFDD /* SF-UI-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Display-Medium.otf"; path = "Resources/Fonts/SF-UI-Display-Medium.otf"; sourceTree = "<group>"; };
@@ -84,6 +88,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		505641261D96772900505EDE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				505641271D96775300505EDE /* CategoryCell.swift */,
+				505641281D96775300505EDE /* CategoryCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		5089FD411D92E08D0080DFDD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +142,7 @@
 		50D5775D1D911A390017A7FF /* Live Wallpapers */ = {
 			isa = PBXGroup;
 			children = (
+				505641261D96772900505EDE /* Cells */,
 				50D5777C1D9136210017A7FF /* Model */,
 				50D577791D9131510017A7FF /* Views */,
 				50D577761D912E660017A7FF /* Common */,
@@ -268,6 +282,7 @@
 				5089FD3E1D92CA950080DFDD /* SF-UI-Display-Ultralight.otf in Resources */,
 				5089FD3A1D92CA950080DFDD /* SF-UI-Display-Light.otf in Resources */,
 				5089FD3D1D92CA950080DFDD /* SF-UI-Display-Thin.otf in Resources */,
+				5056412A1D96775300505EDE /* CategoryCell.xib in Resources */,
 				50D577661D911A390017A7FF /* Assets.xcassets in Resources */,
 				50D577641D911A390017A7FF /* Main.storyboard in Resources */,
 				5089FD3C1D92CA950080DFDD /* SF-UI-Display-Regular.otf in Resources */,
@@ -330,6 +345,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				505641291D96775300505EDE /* CategoryCell.swift in Sources */,
 				50D577611D911A390017A7FF /* LivePhotosViewController.swift in Sources */,
 				5089FD481D93E3990080DFDD /* PhotoCollectionViewCell.swift in Sources */,
 				50D5777B1D9131650017A7FF /* LivePhotoCustomView.swift in Sources */,

@@ -79,7 +79,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nFs-ra-eX4">
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.12156862745098039" blue="0.12156862745098039" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -91,7 +91,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="tcK-56-x15" firstAttribute="top" secondItem="nFs-ra-eX4" secondAttribute="bottom" id="80C-GE-WtF"/>
                             <constraint firstItem="ooU-b5-S3t" firstAttribute="top" secondItem="GJL-TE-SdF" secondAttribute="top" id="CaH-9l-5aJ"/>
@@ -102,6 +102,9 @@
                             <constraint firstItem="nFs-ra-eX4" firstAttribute="top" secondItem="ooU-b5-S3t" secondAttribute="bottom" id="meS-LS-OyG"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tbView" destination="nFs-ra-eX4" id="Nmh-Nb-LWH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="19v-LO-UnD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
