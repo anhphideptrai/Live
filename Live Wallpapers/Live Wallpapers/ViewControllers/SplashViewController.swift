@@ -8,10 +8,13 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+class SplashViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func loadHomePage(){
         let _ = DownloadManager.sharedInstance.loadData {
             let delegateApp = UIApplication.shared.delegate as! AppDelegate
             delegateApp.createMenuView()
