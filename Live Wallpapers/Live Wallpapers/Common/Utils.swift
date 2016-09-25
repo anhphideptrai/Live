@@ -68,3 +68,7 @@ func addConstraintForView(_ subView: UIView, _ parent: UIView){
     parent.addConstraint(leftContraints)
     parent.addConstraint(rightontraints)
 }
+
+func addSkipBackupAttributeToItemAt(uRL: URL?) -> Bool{
+    return false
+}
