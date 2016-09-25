@@ -30,8 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         slideMenuController.delegate = homeViewController
         SlideMenuOptions.contentViewScale = 1
         SlideMenuOptions.hideStatusBar = false
-        self.window?.rootViewController = slideMenuController
-        self.window?.makeKeyAndVisible()
+        
+        UIView.transition(with: self.window!, duration: 0.5, options: .transitionFlipFromRight, animations: {
+            self.window?.rootViewController = slideMenuController
+            self.window?.makeKeyAndVisible()
+            }, completion: nil)
+        
     }
 }
 
