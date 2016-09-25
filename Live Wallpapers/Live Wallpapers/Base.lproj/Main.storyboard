@@ -25,7 +25,16 @@
                     <view key="view" contentMode="scaleToFill" id="PNK-h9-iHO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plash" translatesAutoresizingMaskIntoConstraints="NO" id="9Dt-2A-r8h"/>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hI1-kn-qj5" firstAttribute="top" secondItem="9Dt-2A-r8h" secondAttribute="bottom" id="VZd-pW-yU2"/>
+                            <constraint firstItem="9Dt-2A-r8h" firstAttribute="top" secondItem="PNK-h9-iHO" secondAttribute="top" id="gub-B6-UoM"/>
+                            <constraint firstItem="9Dt-2A-r8h" firstAttribute="leading" secondItem="PNK-h9-iHO" secondAttribute="leading" id="kQH-6P-zNM"/>
+                            <constraint firstAttribute="trailing" secondItem="9Dt-2A-r8h" secondAttribute="trailing" id="qoT-tl-cMK"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
@@ -416,5 +425,6 @@
     <resources>
         <image name="arrow" width="180" height="180"/>
         <image name="menu" width="180" height="180"/>
+        <image name="plash" width="675" height="1200"/>
     </resources>
 </document>

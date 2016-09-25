@@ -12,6 +12,7 @@ class SplashViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(loadHomePage), userInfo: nil, repeats: false)
     }
     
     func loadHomePage(){
