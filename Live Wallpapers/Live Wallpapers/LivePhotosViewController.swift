@@ -54,7 +54,7 @@ class LivePhotosViewController: UIViewController{
         carouselView.isPagingEnabled = true
         carouselView.bounces = false
         carouselView.currentItemIndex = firstItemIndex
-        loadData()
+        delayLoadData()
     }
     
     func updateTime(){

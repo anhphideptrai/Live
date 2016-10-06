@@ -480,7 +480,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A2B7F8406FC39921D0B5D483 /* Pods-Live Wallpapers.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J8EBSP3JMS;
 				INFOPLIST_FILE = "Live Wallpapers/Info.plist";
@@ -496,7 +496,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5DEBD9E3C9622E92FE0B8413 /* Pods-Live Wallpapers.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = J8EBSP3JMS;
 				INFOPLIST_FILE = "Live Wallpapers/Info.plist";

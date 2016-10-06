@@ -19,4 +19,9 @@ struct Constants {
         static let MSG_SAVE_SUSSESS         = ""
         static let MSG_NEED_ACCESS_PHOTOS   = ""
     }
+    struct Ads {
+        static let APP_ID                   = "ca-app-pub-1775449000819183~4391617956"
+        static let NATIVE_ID                = "ca-app-pub-1775449000819183/2775283953"
+        static let NATIVE_ID_LARGE          = "ca-app-pub-1775449000819183/1621451557"
+    }
 }

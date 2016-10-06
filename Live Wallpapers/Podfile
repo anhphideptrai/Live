@@ -8,6 +8,7 @@ target 'Live Wallpapers' do
   pod 'AlamofireImage', '~> 3.0'
   pod 'iCarousel', '~> 1.8'
   pod 'SlideMenuControllerSwift', '~> 3.0'
+  pod 'Firebase/AdMob'
   # Pods for Live Wallpapers
 
 end
