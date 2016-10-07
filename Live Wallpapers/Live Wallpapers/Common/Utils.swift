@@ -40,9 +40,11 @@ func dateToDateStringWith(date: Date) -> String{
 }
 
 func showAlertWith(title: String? = Constants.Messages.MSG_TITLE_ALERT, message: String?, cancelTitle: String? = Constants.Messages.MSG_OK, viewController: UIViewController) {
-    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: nil))
-    viewController.present(alert, animated: true, completion: nil)
+    DispatchQueue.main.async {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: nil))
+        viewController.present(alert, animated: true, completion: nil)
+    }
 }
 
 func addConstraintForView(_ subView: UIView, _ parent: UIView){
