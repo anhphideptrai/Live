@@ -408,6 +408,7 @@
                     <connections>
                         <outlet property="backHideView" destination="sr9-aC-Iyi" id="Hia-UC-J7x"/>
                         <outlet property="backView" destination="ppv-4T-L2B" id="13a-Y7-Xgp"/>
+                        <outlet property="bottomView" destination="Qsj-10-hKB" id="8Vf-MZ-x2F"/>
                         <outlet property="btnSave" destination="QfQ-Ar-fv3" id="YAX-r5-qxe"/>
                         <outlet property="carouselView" destination="lMU-7B-tYm" id="LNq-zC-9H9"/>
                         <outlet property="lbDate" destination="bS3-zy-hxp" id="k4C-EJ-t8d"/>
@@ -425,6 +426,6 @@
     <resources>
         <image name="arrow" width="180" height="180"/>
         <image name="menu" width="180" height="180"/>
-        <image name="plash" width="675" height="1200"/>
+        <image name="plash" width="1242" height="2208"/>
     </resources>
 </document>

@@ -9,39 +9,54 @@
 import UIKit
 import iCarousel
 import Photos
+import GoogleMobileAds
 
 class LivePhotosViewController: UIViewController{
 
-    public var liveItems                        = [LiveItem]()
-    public var firstItemIndex:          Int     = 0
-    public var frameCarousel:           CGRect?
+    public          var liveItems               = [LiveItem]()
+    public          var firstItemIndex:         Int     = 0
+    public          var frameCarousel:          CGRect?
     
-    private var timerLoad:              Timer?
-    private var timerDate:              Timer?
-    private var hideControls:           Bool    = false
+    private         var timerLoad:              Timer?
+    private         var timerDate:              Timer?
+    fileprivate     var hideControls:           Bool    = false
     
-    @IBOutlet weak var carouselView:    iCarousel!
-    @IBOutlet weak var lbTime:          UILabel!
-    @IBOutlet weak var lbDate:          UILabel!
-    @IBOutlet weak var saveView:        UIView!
-    @IBOutlet weak var btnSave:         UIButton!
-    @IBOutlet weak var backView:        UIView!
-    @IBOutlet weak var backHideView:    UIView!
-    @IBOutlet weak var progressView:    UIProgressView!
+    @IBOutlet weak  var carouselView:           iCarousel!
+    @IBOutlet weak  var lbTime:                 UILabel!
+    @IBOutlet weak  var lbDate:                 UILabel!
+    @IBOutlet weak  var saveView:               UIView!
+    @IBOutlet weak  var btnSave:                UIButton!
+    @IBOutlet weak  var backView:               UIView!
+    @IBOutlet weak  var backHideView:           UIView!
+    @IBOutlet weak  var progressView:           UIProgressView!
+    @IBOutlet weak  var bottomView:             UIView!
+                    var nativeExpressAdView:    GADNativeExpressAdView!
+                    var adsRemoved:             Bool = false
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        saveView.layer.masksToBounds             = true
-        saveView.layer.borderWidth               = 1
-        saveView.layer.borderColor               = UIColor.gray.cgColor
-        saveView.layer.cornerRadius              = 30
+        nativeExpressAdView                     = GADNativeExpressAdView(frame: CGRect(x: 10, y: (self.view.bounds.size.height - 350 - 10), width: self.view.bounds.size.width - 20, height: 350))
+        nativeExpressAdView.adUnitID = Constants.Ads.NATIVE_ID_LARGE
+        nativeExpressAdView.rootViewController = self
         
-        backView.layer.masksToBounds             = true
-        backView.layer.borderWidth               = 1
-        backView.layer.borderColor               = UIColor.gray.cgColor
-        backView.layer.cornerRadius              = 15
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        nativeExpressAdView.load(request)
+        
+        nativeExpressAdView.layer.masksToBounds     = true
+        nativeExpressAdView.layer.cornerRadius      = 8
+        
+        saveView.layer.masksToBounds                = true
+        saveView.layer.borderWidth                  = 1
+        saveView.layer.borderColor                  = UIColor.gray.cgColor
+        saveView.layer.cornerRadius                 = 30
+        
+        backView.layer.masksToBounds                = true
+        backView.layer.borderWidth                  = 1
+        backView.layer.borderColor                  = UIColor.gray.cgColor
+        backView.layer.cornerRadius                 = 15
         
         updateTime()
         timerDate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
@@ -106,8 +121,7 @@ class LivePhotosViewController: UIViewController{
         hideControls            = !hideControls
         lbTime.isHidden         = hideControls
         lbDate.isHidden         = hideControls
-        saveView.isHidden       = hideControls
-        backHideView.isHidden   = hideControls
+        bottomView.isHidden     = hideControls
     }
     
     @IBAction func saveAction(_ sender: AnyObject) {
@@ -178,11 +192,20 @@ extension LivePhotosViewController: iCarouselDataSource, iCarouselDelegate{
         }else{
             itemView.loadPhotoWith(uRLPhoto: liveItem.urlImage())
         }
-        
+        if index % 3 == 0 && index != 0 {
+            adsRemoved = false
+            nativeExpressAdView.removeFromSuperview()
+            itemView.addSubview(nativeExpressAdView)
+        }
         return itemView
     }
     
     func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
+        if carousel.currentItemIndex % 3 == 0 && carousel.currentItemIndex != 0 && !adsRemoved{
+            hideControls    = false
+            showHideControls()
+        
+        }
         delayLoadData()
     }
     
@@ -193,6 +216,10 @@ extension LivePhotosViewController: iCarouselDataSource, iCarouselDelegate{
         return value
     }
     func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
+        if index != 0 && index % 3 == 0 && !adsRemoved{
+            adsRemoved      = true
+            nativeExpressAdView.removeFromSuperview()
+        }
         showHideControls()
     }
     func carouselWillBeginDragging(_ carousel: iCarousel) {
