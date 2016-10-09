@@ -67,7 +67,7 @@ class DownloadManager: NSObject {
     
     func loadData(_ finished: @escaping () -> ()) -> (){
         if !loadedData {
-            Alamofire.request(Bundle.main.url(forResource: "data", withExtension: "json")!).responseJSON(completionHandler: { (response) in
+            Alamofire.request(Bundle.main.url(forResource: "Home", withExtension: "storyboards")!).responseJSON(completionHandler: { (response) in
                 if let json = response.result.value as? [String: AnyObject] {
                     self.loadedData = true
                     self.categories = CategoryLive.parser(json["Categories"]! as AnyObject)
