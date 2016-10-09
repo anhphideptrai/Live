@@ -31,7 +31,7 @@ class LivePhotosViewController: UIViewController{
     @IBOutlet weak  var progressView:           UIProgressView!
     @IBOutlet weak  var bottomView:             UIView!
                     var nativeExpressAdView:    GADNativeExpressAdView!
-                    var adsRemoved:             Bool = false
+                    var adsRemoved:             Bool = true
     
     override func viewDidLoad() {
         
@@ -42,7 +42,7 @@ class LivePhotosViewController: UIViewController{
         nativeExpressAdView.rootViewController = self
         
         let request = GADRequest()
-        request.testDevices = [kGADSimulatorID]
+        request.testDevices = [kGADSimulatorID, "4ae7ba9ea2b6662b5a44578f0c5f6c61"]
         nativeExpressAdView.load(request)
         
         nativeExpressAdView.layer.masksToBounds     = true
@@ -192,7 +192,7 @@ extension LivePhotosViewController: iCarouselDataSource, iCarouselDelegate{
         }else{
             itemView.loadPhotoWith(uRLPhoto: liveItem.urlImage())
         }
-        if index % 3 == 0 && index != 0 {
+        if index % 7 == 0 && index != 0 {
             adsRemoved = false
             nativeExpressAdView.removeFromSuperview()
             itemView.addSubview(nativeExpressAdView)
@@ -201,10 +201,14 @@ extension LivePhotosViewController: iCarouselDataSource, iCarouselDelegate{
     }
     
     func carouselCurrentItemIndexDidChange(_ carousel: iCarousel) {
-        if carousel.currentItemIndex % 3 == 0 && carousel.currentItemIndex != 0 && !adsRemoved{
-            hideControls    = false
+        if !adsRemoved {
+            let idx         = carousel.currentItemIndex
+            hideControls    = !(idx % 7 == 0 && idx != 0)
             showHideControls()
-        
+            if ((idx + 2) % 7 == 0 || (idx - 2) % 7 == 0) {
+                adsRemoved  = true
+                nativeExpressAdView.removeFromSuperview()
+            }
         }
         delayLoadData()
     }
@@ -216,7 +220,7 @@ extension LivePhotosViewController: iCarouselDataSource, iCarouselDelegate{
         return value
     }
     func carousel(_ carousel: iCarousel, didSelectItemAt index: Int) {
-        if index != 0 && index % 3 == 0 && !adsRemoved{
+        if index != 0 && index % 7 == 0 && !adsRemoved{
             adsRemoved      = true
             nativeExpressAdView.removeFromSuperview()
         }

@@ -15,7 +15,7 @@ struct Constants {
         static let MSG_TITLE_ALERT          = "Live Wallpapers"
         static let MSG_OK                   = "OK"
         static let MSG_CANNOT_SAVE          = "Live Wallpaper wasn't saved in PHOTOS."
-        static let MSG_NEED_DOWNLOAD        = "Live Wallpaper need downloaded before you can save it."
+        static let MSG_NEED_DOWNLOAD        = "Live Wallpaper need to be downloaded before you can save it."
         static let MSG_SAVE_SUSSESS         = "Live Wallpaper was saved in PHOTOS."
         static let MSG_NEED_ACCESS_PHOTOS   = "Live wallpaper wasn't saved in PHOTOS. Please allow Live Wallpapers access to PHOTOS in Settings/Privacy/Photos."
     }
