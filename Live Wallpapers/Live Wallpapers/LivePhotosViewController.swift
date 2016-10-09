@@ -40,8 +40,8 @@ class LivePhotosViewController: UIViewController{
         
         super.viewDidLoad()
         
-        nativeExpressAdView                     = GADNativeExpressAdView(frame: CGRect(x: 10, y: (self.view.bounds.size.height - 350 - 10), width: self.view.bounds.size.width - 20, height: 350))
-        nativeExpressAdView.adUnitID = Constants.Ads.NATIVE_ID_LARGE
+        nativeExpressAdView                         = GADNativeExpressAdView(frame: CGRect(x: 10, y: (self.view.bounds.size.height - 350 - 10), width: self.view.bounds.size.width - 20, height: 350))
+        nativeExpressAdView.adUnitID                = Constants.Ads.NATIVE_ID_LARGE
         nativeExpressAdView.rootViewController = self
         nativeExpressAdView.load(getRequestAds())
         
@@ -59,7 +59,7 @@ class LivePhotosViewController: UIViewController{
         backView.layer.cornerRadius                 = 15
         
         updateTime()
-        timerDate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        timerDate                                   = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
         setupData()
         
         Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(delayLoadBannerAds), userInfo: nil, repeats: false)
@@ -70,12 +70,6 @@ class LivePhotosViewController: UIViewController{
         bannerAds.adUnitID              = Constants.Ads.BANNER_ID
         bannerAds.rootViewController    = self
         bannerAds.load(getRequestAds())
-    }
-    
-    func getRequestAds() -> GADRequest {
-        let request                     = GADRequest()
-        request.testDevices             = [kGADSimulatorID, "4ae7ba9ea2b6662b5a44578f0c5f6c61"]
-        return request
     }
     
     func setupData(){

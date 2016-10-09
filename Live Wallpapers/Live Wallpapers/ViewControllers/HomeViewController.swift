@@ -8,20 +8,32 @@
 
 import UIKit
 import SlideMenuControllerSwift
+import GoogleMobileAds
 
 class HomeViewController: UIViewController {
 
-    public var category: CategoryLive?
-    public var liveItemsSelected = [LiveItem]()
+                public  var category:           CategoryLive?
+                public  var liveItemsSelected   = [LiveItem]()
     
-    @IBOutlet weak var lbCategoryTitle: UILabel!
-    @IBOutlet weak var collectionView:  UICollectionView!
+    @IBOutlet   weak    var lbCategoryTitle:    UILabel!
+    @IBOutlet   weak    var collectionView:     UICollectionView!
+                        var interstitial:       GADInterstitial!
+                        var isDidReceiveAd:     Bool = false
+                        var selectedIdx:        Int = 0
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         collectionView.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: "PhotoCollectionViewCell")
         setupData()
+        createAndLoadInterstitial()
+    }
+    
+    fileprivate func createAndLoadInterstitial() {
+        isDidReceiveAd          = false
+        interstitial            = GADInterstitial(adUnitID: Constants.Ads.INTERSTITIAL_ID)
+        interstitial.delegate   = self
+        interstitial.load(getRequestAds())
     }
     
     func setupData(){
@@ -36,7 +48,7 @@ class HomeViewController: UIViewController {
         collectionView.reloadData()
     }
     
-    func openLivePhotosWith(selectedIdx: Int){
+    func openLivePhotosWith(){
         let livePhotosCV = storyboard!.instantiateViewController(withIdentifier: "LivePhotosViewControllerIdentity") as! LivePhotosViewController
         livePhotosCV.firstItemIndex = selectedIdx
         livePhotosCV.liveItems      = liveItemsSelected
@@ -73,7 +85,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        openLivePhotosWith(selectedIdx: indexPath.row)
+        selectedIdx = indexPath.row
+        if (Int(arc4random_uniform(3)) == 2 && isDidReceiveAd){
+            interstitial.present(fromRootViewController: self)
+        }else{
+            openLivePhotosWith()
+        }
     }
 }
 
@@ -84,5 +101,15 @@ extension HomeViewController: SlideMenuControllerDelegate {
             setupData()
         }
         
+    }
+}
+
+extension HomeViewController: GADInterstitialDelegate{
+    func interstitialDidReceiveAd(_ ad: GADInterstitial!) {
+        isDidReceiveAd = true
+    }
+    func interstitialDidDismissScreen(_ ad: GADInterstitial!) {
+        createAndLoadInterstitial()
+        openLivePhotosWith()
     }
 }

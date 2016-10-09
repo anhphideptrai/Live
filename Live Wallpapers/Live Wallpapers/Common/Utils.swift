@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 /* Get Document URL */
 func getDocumentDirectory() -> URL{
@@ -69,6 +70,12 @@ func addConstraintForView(_ subView: UIView, _ parent: UIView){
     parent.addConstraint(bottomContraints)
     parent.addConstraint(leftContraints)
     parent.addConstraint(rightontraints)
+}
+
+func getRequestAds() -> GADRequest {
+    let request                     = GADRequest()
+    request.testDevices             = [kGADSimulatorID, "4ae7ba9ea2b6662b5a44578f0c5f6c61"]
+    return request
 }
 
 func addSkipBackupAttributeToItemAtURL(filePath:String) -> Bool
