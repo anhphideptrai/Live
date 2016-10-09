@@ -71,6 +71,20 @@ func addConstraintForView(_ subView: UIView, _ parent: UIView){
     parent.addConstraint(rightontraints)
 }
 
-func addSkipBackupAttributeToItemAt(uRL: URL?) -> Bool{
-    return false
+func addSkipBackupAttributeToItemAtURL(filePath:String) -> Bool
+{
+    let URL:NSURL = NSURL.fileURL(withPath: filePath) as NSURL
+    
+    assert(FileManager.default.fileExists(atPath: filePath), "File \(filePath) does not exist")
+    
+    var success: Bool
+    do {
+        try URL.setResourceValue(true, forKey:URLResourceKey.isExcludedFromBackupKey)
+        success = true
+    } catch let error as NSError {
+        success = false
+        print("Error excluding \(URL.lastPathComponent) from backup \(error)");
+    }
+    
+    return success
 }

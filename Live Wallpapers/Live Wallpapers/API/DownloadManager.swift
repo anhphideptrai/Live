@@ -53,6 +53,7 @@ class DownloadManager: NSObject {
                 download?.responseData { response in
                     switch response.result {
                     case .success:
+                        if addSkipBackupAttributeToItemAtURL(filePath: (response.destinationURL?.path)!){}
                         completionHandler(true, response.destinationURL, tag)
                     case .failure:
                         completionHandler(false, nil, tag)
