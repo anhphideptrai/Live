@@ -23,5 +23,6 @@ struct Constants {
         static let APP_ID                   = "ca-app-pub-1775449000819183~4391617956"
         static let NATIVE_ID                = "ca-app-pub-1775449000819183/2775283953"
         static let NATIVE_ID_LARGE          = "ca-app-pub-1775449000819183/1621451557"
+        static let BANNER_ID                = "ca-app-pub-1775449000819183/9779539952"
     }
 }

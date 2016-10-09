@@ -32,6 +32,9 @@ class LivePhotosViewController: UIViewController{
     @IBOutlet weak  var bottomView:             UIView!
                     var nativeExpressAdView:    GADNativeExpressAdView!
                     var adsRemoved:             Bool = true
+    @IBOutlet weak var bannerAds:               GADBannerView!
+    @IBOutlet weak var heightBannerAds:         NSLayoutConstraint!
+    @IBOutlet weak var bottomOfBottomView:      NSLayoutConstraint!
     
     override func viewDidLoad() {
         
@@ -40,10 +43,7 @@ class LivePhotosViewController: UIViewController{
         nativeExpressAdView                     = GADNativeExpressAdView(frame: CGRect(x: 10, y: (self.view.bounds.size.height - 350 - 10), width: self.view.bounds.size.width - 20, height: 350))
         nativeExpressAdView.adUnitID = Constants.Ads.NATIVE_ID_LARGE
         nativeExpressAdView.rootViewController = self
-        
-        let request = GADRequest()
-        request.testDevices = [kGADSimulatorID, "4ae7ba9ea2b6662b5a44578f0c5f6c61"]
-        nativeExpressAdView.load(request)
+        nativeExpressAdView.load(getRequestAds())
         
         nativeExpressAdView.layer.masksToBounds     = true
         nativeExpressAdView.layer.cornerRadius      = 8
@@ -61,14 +61,29 @@ class LivePhotosViewController: UIViewController{
         updateTime()
         timerDate = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
         setupData()
+        
+        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(delayLoadBannerAds), userInfo: nil, repeats: false)
+        
+    }
+    
+    func delayLoadBannerAds(){
+        bannerAds.adUnitID              = Constants.Ads.BANNER_ID
+        bannerAds.rootViewController    = self
+        bannerAds.load(getRequestAds())
+    }
+    
+    func getRequestAds() -> GADRequest {
+        let request                     = GADRequest()
+        request.testDevices             = [kGADSimulatorID, "4ae7ba9ea2b6662b5a44578f0c5f6c61"]
+        return request
     }
     
     func setupData(){
-        carouselView.delegate   = self
-        carouselView.dataSource = self
-        carouselView.isPagingEnabled = true
-        carouselView.bounces = false
-        carouselView.currentItemIndex = firstItemIndex
+        carouselView.delegate           = self
+        carouselView.dataSource         = self
+        carouselView.isPagingEnabled    = true
+        carouselView.bounces            = false
+        carouselView.currentItemIndex   = firstItemIndex
         delayLoadData()
     }
     
@@ -122,6 +137,7 @@ class LivePhotosViewController: UIViewController{
         lbTime.isHidden         = hideControls
         lbDate.isHidden         = hideControls
         bottomView.isHidden     = hideControls
+        bannerAds.isHidden      = hideControls
     }
     
     @IBAction func saveAction(_ sender: AnyObject) {
@@ -231,4 +247,9 @@ extension LivePhotosViewController: iCarouselDataSource, iCarouselDelegate{
         livePhoto.livePhotoView?.stopPlayback()
     }
 }
-
+extension LivePhotosViewController: GADBannerViewDelegate{
+    func adViewDidReceiveAd(_ bannerView: GADBannerView!) {
+        heightBannerAds.constant    = 50
+        bottomOfBottomView.constant = 50
+    }
+}

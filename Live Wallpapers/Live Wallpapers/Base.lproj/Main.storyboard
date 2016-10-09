@@ -234,7 +234,7 @@
             </objects>
             <point key="canvasLocation" x="-820" y="109.29535232383809"/>
         </scene>
-        <!--Live Photos View Controller-->
+        <!--Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="LivePhotosViewControllerIdentity" id="BYZ-38-t0r" customClass="LivePhotosViewController" customModule="Live_Wallpapers" customModuleProvider="target" sceneMemberID="viewController">
@@ -362,11 +362,14 @@
                                     <constraint firstItem="sr9-aC-Iyi" firstAttribute="leading" secondItem="Qsj-10-hKB" secondAttribute="leading" id="xwH-YT-AMJ"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLv-Jf-Yaj">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mLv-Jf-Yaj" customClass="GADBannerView">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" id="eY1-6i-MYr"/>
+                                    <constraint firstAttribute="height" constant="50" id="eY1-6i-MYr"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="FI0-gq-XMt"/>
+                                </connections>
                             </view>
                             <progressView opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RZQ-8A-paE">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -408,9 +411,12 @@
                     <connections>
                         <outlet property="backHideView" destination="sr9-aC-Iyi" id="Hia-UC-J7x"/>
                         <outlet property="backView" destination="ppv-4T-L2B" id="13a-Y7-Xgp"/>
+                        <outlet property="bannerAds" destination="mLv-Jf-Yaj" id="jrd-IE-PF4"/>
+                        <outlet property="bottomOfBottomView" destination="t0b-pk-TDV" id="Hzl-a3-M7V"/>
                         <outlet property="bottomView" destination="Qsj-10-hKB" id="8Vf-MZ-x2F"/>
                         <outlet property="btnSave" destination="QfQ-Ar-fv3" id="YAX-r5-qxe"/>
                         <outlet property="carouselView" destination="lMU-7B-tYm" id="LNq-zC-9H9"/>
+                        <outlet property="heightBannerAds" destination="eY1-6i-MYr" id="fTO-tA-i0M"/>
                         <outlet property="lbDate" destination="bS3-zy-hxp" id="k4C-EJ-t8d"/>
                         <outlet property="lbTime" destination="BVA-YW-Uyn" id="ucV-DP-BhD"/>
                         <outlet property="progressView" destination="RZQ-8A-paE" id="UNl-Ie-eYU"/>
