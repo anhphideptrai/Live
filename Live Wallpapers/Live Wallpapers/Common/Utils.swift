@@ -40,9 +40,13 @@ func dateToDateStringWith(date: Date) -> String{
     return dateformatter.string(from: date)
 }
 
-func showAlertWith(title: String? = Constants.Messages.MSG_TITLE_ALERT, message: String?, cancelTitle: String? = Constants.Messages.MSG_OK, viewController: UIViewController) {
+func showAlertWith(title: String? = Constants.Messages.MSG_TITLE_ALERT, message: String?, cancelTitle: String? = Constants.Messages.MSG_OK, otherTitle: String? = nil, viewController: UIViewController, handleOtherAction: ((UIAlertAction) -> Swift.Void)? = nil) {
     DispatchQueue.main.async {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if otherTitle != nil {
+            let otherAction = UIAlertAction(title: otherTitle, style: .default, handler: handleOtherAction)
+            alert.addAction(otherAction)
+        }
         alert.addAction(UIAlertAction(title: cancelTitle, style: .default, handler: nil))
         viewController.present(alert, animated: true, completion: nil)
     }

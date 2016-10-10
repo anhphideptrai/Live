@@ -29,6 +29,17 @@ class HomeViewController: UIViewController {
         createAndLoadInterstitial()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if Int(arc4random_uniform(5)) == 2 && (UserDefaults.standard.object(forKey: Constants.App.RATED) == nil){
+            showAlertWith(title: Constants.Messages.MSG_RATING,message: Constants.Messages.MSG_RATE_5_STARS, cancelTitle: Constants.Messages.MSG_DISMISS, otherTitle: Constants.Messages.MSG_RATE_5_STARS, viewController: self, handleOtherAction: { (_) in
+                UserDefaults.standard.set(true, forKey: Constants.App.RATED)
+                UserDefaults.standard.synchronize()
+                UIApplication.shared.openURL(URL.init(string: Constants.App.URL_REVIEW)!)
+            })
+        }
+    }
+    
     fileprivate func createAndLoadInterstitial() {
         isDidReceiveAd          = false
         interstitial            = GADInterstitial(adUnitID: Constants.Ads.INTERSTITIAL_ID)

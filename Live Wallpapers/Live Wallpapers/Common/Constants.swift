@@ -18,6 +18,9 @@ struct Constants {
         static let MSG_NEED_DOWNLOAD        = "Live Wallpaper need to be downloaded before you can save it."
         static let MSG_SAVE_SUSSESS         = "Live Wallpaper was saved in PHOTOS."
         static let MSG_NEED_ACCESS_PHOTOS   = "Live wallpaper wasn't saved in PHOTOS. Please allow Live Wallpapers access to PHOTOS in Settings/Privacy/Photos."
+        static let MSG_RATING               = "Help make The Live Wallpapers even better. Rate us 5 stars!"
+        static let MSG_RATE_5_STARS         = "Rate it 5 stars"
+        static let MSG_DISMISS              = "Dismiss"
     }
     struct Ads {
         static let APP_ID                   = "ca-app-pub-1775449000819183~4391617956"
@@ -25,5 +28,10 @@ struct Constants {
         static let NATIVE_ID_LARGE          = "ca-app-pub-1775449000819183/1621451557"
         static let BANNER_ID                = "ca-app-pub-1775449000819183/9779539952"
         static let INTERSTITIAL_ID          = "ca-app-pub-1775449000819183/6627597151"
+    }
+    struct App {
+        static let  URL_REVIEW              = "https://itunes.apple.com/app/viewContentsUserReviews?id=1163646809"
+        static let  URL_APP                 = "https://itunes.apple.com/app/id1163646809?mt=8"
+        static let  RATED                   = "RATED"
     }
 }
