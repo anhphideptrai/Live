@@ -138,8 +138,29 @@ def genere_json2():
     with open('output/data1.json', 'w') as outfile:
         json.dump({'total':count_total, 'Categories':items, 'data':data}, outfile, sort_keys=True)
 
+def downloadDraw():
+    count = 1
+    with open('json/new_draw.txt') as f:
+        for line in f:
+            tmp = line.split('|')
+            if len(tmp[0]) > 1:
+                lesson = 'lesson' + tmp[0] + '.zip'
+            else:
+                lesson = 'lesson' + '0' + tmp[0] + '.zip'
+            app    = 'app' + tmp[1].strip()
+            link = 'http://storage.googleapis.com/orgit-prod-bucket/6000334795177984/drawnew/' + app + '/' + lesson
+            
+            output_dir = 'download/' + app + '/'
+            create_output_file_if_not_exist(output_dir)
+
+            file1 = urllib.URLopener()
+            file1.retrieve(link, os.path.join(output_dir, lesson))
+            print count
+            count += 1
+
+
 if __name__ == '__main__':
-    genere_json2()
+    downloadDraw()
 
 
 
