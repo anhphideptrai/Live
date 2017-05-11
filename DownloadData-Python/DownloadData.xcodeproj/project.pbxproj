@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		506A2BE21EC318C30026EAD1 /* new_draw.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = new_draw.txt; sourceTree = "<group>"; };
+		506A2BE31EC406D50026EAD1 /* draw.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = draw.txt; sourceTree = "<group>"; };
 		B2376E8B1D534713006D24D5 /* UnzipFile.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = UnzipFile.py; sourceTree = "<group>"; };
 		B2FBDB451D41CFF7009858DA /* DownloadJson.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = DownloadJson.py; sourceTree = "<group>"; };
 		B2FBDB471D41D1CE009858DA /* live-photo2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "live-photo2.json"; sourceTree = "<group>"; };
@@ -31,6 +32,7 @@
 				B2FBDB491D43C8E8009858DA /* data.json */,
 				B2FBDB481D4324E9009858DA /* live-photo1.json */,
 				506A2BE21EC318C30026EAD1 /* new_draw.txt */,
+				506A2BE31EC406D50026EAD1 /* draw.txt */,
 				B2FBDB471D41D1CE009858DA /* live-photo2.json */,
 			);
 			path = json;

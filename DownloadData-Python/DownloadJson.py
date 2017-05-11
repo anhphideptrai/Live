@@ -140,7 +140,7 @@ def genere_json2():
 
 def downloadDraw():
     count = 1
-    with open('json/new_draw.txt') as f:
+    with open('json/draw.txt') as f:
         for line in f:
             tmp = line.split('|')
             if len(tmp[0]) > 1:
@@ -148,7 +148,7 @@ def downloadDraw():
             else:
                 lesson = 'lesson' + '0' + tmp[0] + '.zip'
             app    = 'app' + tmp[1].strip()
-            link = 'http://storage.googleapis.com/orgit-prod-bucket/6000334795177984/drawnew/' + app + '/' + lesson
+            link = 'http://storage.googleapis.com/orgit-prod-bucket/6000334795177984/zipfile/' + app + '/' + lesson
             
             output_dir = 'download/' + app + '/'
             create_output_file_if_not_exist(output_dir)
