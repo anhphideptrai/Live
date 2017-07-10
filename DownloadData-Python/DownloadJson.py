@@ -139,7 +139,7 @@ def genere_json2():
         json.dump({'total':count_total, 'Categories':items, 'data':data}, outfile, sort_keys=True)
 
 def downloadDraw():
-    count = 1
+    count = 1486
     with open('json/draw.txt') as f:
         for line in f:
             tmp = line.split('|')
@@ -152,15 +152,31 @@ def downloadDraw():
             
             output_dir = 'download/' + app + '/'
             create_output_file_if_not_exist(output_dir)
-
-            file1 = urllib.URLopener()
-            file1.retrieve(link, os.path.join(output_dir, lesson))
+            try:
+                file1 = urllib.URLopener()
+                file1.retrieve(link, os.path.join(output_dir, lesson))
+            except urllib.error.URLError as e:
+                print 'Error: ' + link
             print count
             count += 1
 
+def downLiveItems():
+    count   = 0
+    all     = load_data('json/live_backup.json')
+    items   = all['data']
+    for key in items.keys():
+        count += 1
+        item = items[key]
+        category    = item['category']
+        sever       = 'http://storage.googleapis.com/sweat_pea_apps/wallpaper_live/'+category+'/'
+        image_url   = sever + item['image']
+        video_url   = sever + item['video']
+        output_dir  = 'download/'+category+'/'
+        download_data(image_url, video_url, output_dir, count)
+        print 'new: ' + str(count) +'/'+ str(len(items)) + ' URL: ' + image_url
 
 if __name__ == '__main__':
-    downloadDraw()
+    downLiveItems()
 
 
 

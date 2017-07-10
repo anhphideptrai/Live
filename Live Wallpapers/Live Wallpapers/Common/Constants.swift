@@ -10,7 +10,7 @@ import Foundation
 
 struct Constants {
     static let DOWNLOAD_FOLDER = "DOWNLOADED/"
-    static let SERVER_DATA     = "https://storage.googleapis.com/orgit-prod-bucket/6000334795177984/wallpaper_live/"
+    static let SERVER_DATA     = "http://storage.googleapis.com/sweat_pea_apps/wallpaper_live/"
     struct Messages {
         static let MSG_TITLE_ALERT          = "Live Wallpapers"
         static let MSG_OK                   = "OK"

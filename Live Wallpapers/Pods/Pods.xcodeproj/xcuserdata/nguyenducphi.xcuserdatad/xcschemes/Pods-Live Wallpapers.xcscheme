@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0800"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "65CFDD7A7521E258A351FE8147B5542B"
+               BlueprintIdentifier = "AAD53BE869D080F66BF8AD32CAF5E4AF"
                BuildableName = "Pods_Live_Wallpapers.framework"
                BlueprintName = "Pods-Live Wallpapers"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "65CFDD7A7521E258A351FE8147B5542B"
+            BlueprintIdentifier = "AAD53BE869D080F66BF8AD32CAF5E4AF"
             BuildableName = "Pods_Live_Wallpapers.framework"
             BlueprintName = "Pods-Live Wallpapers"
             ReferencedContainer = "container:Pods.xcodeproj">
