@@ -56,11 +56,11 @@ class ViewController: UIViewController {
         lbTime.text = dateToTimeStringWith(date: Date())
         lbDate.text = dateToDateStringWith(date: Date())
         
-        arrIntros.append((Constants.MSG_UNIQUE_BACKGROUDS, Constants.MSG_FIT_ANY_SCREEN))
-        arrIntros.append((Constants.MSG_LIVE_WALLPAPERS, Constants.MSG_FOR_YOUR_IPHONE))
-        arrIntros.append((Constants.MSG_AWESOME_THEMES, Constants.MSG_HUGE_COLLECTION))
-        arrIntros.append((Constants.MSG_CUSTOM_LOCK_SCREEN, Constants.MSG_ENDLESS_OPTIONS))
-        arrIntros.append((Constants.MSG_PIXEL_PERFECT, Constants.MSG_HD_QUALITY))
+        arrIntros.append((Constants.video_unlimited, Constants.play_free))
+        arrIntros.append((Constants.perfect_display, Constants.play_hd))
+        arrIntros.append((Constants.search_youtube, Constants.for_any_videos))
+        arrIntros.append((Constants.organize_music, Constants.into_playlist))
+        arrIntros.append((Constants.enjoy_music, Constants.play_background))
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         bgView.addSubview(blurEffectView)
         
         changeImage()
-        Timer.scheduledTimer(timeInterval: 3, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
         
     }
     

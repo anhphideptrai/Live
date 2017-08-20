@@ -20,6 +20,17 @@ struct Constants {
     static let MSG_PIXEL_PERFECT        = "Pixel Perfect Designs"
     static let MSG_HD_QUALITY           = "HD Quality"
     
+    static let video_unlimited          = "Songs Unlimited"
+    static let play_free                = "Play all of your favorite music for FREE"
+    static let perfect_display          = "Perfect Display Effect"
+    static let play_hd                  = "Play high quality songs [HD]"
+    static let search_youtube           = "Search YouTube"
+    static let for_any_videos           = "Free access to millions of songs"
+    static let organize_music           = "Organize Your Music"
+    static let into_playlist            = "Into unlimited playlists"
+    static let enjoy_music              = "Enjoy Your Music"
+    static let play_background          = "Play songs in BACKGROUND"
+    
     struct Colors{
         static let BLUE                 = 0x08B4FC
         static let RED                  = 0xFF5566
