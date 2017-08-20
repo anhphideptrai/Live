@@ -25,6 +25,12 @@
 		50530DCE1D97FF480064B9B4 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50530DCA1D97FF480064B9B4 /* 4.jpg */; };
 		50530DCF1D97FF480064B9B4 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 50530DCB1D97FF480064B9B4 /* 5.jpg */; };
 		50530DD11D9816FA0064B9B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50530DD01D9816FA0064B9B4 /* Constants.swift */; };
+		FC2672441F499C1B00281247 /* v1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = FC26723F1F499C1B00281247 /* v1.PNG */; };
+		FC2672451F499C1B00281247 /* v2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = FC2672401F499C1B00281247 /* v2.PNG */; };
+		FC2672461F499C1B00281247 /* v3.PNG in Resources */ = {isa = PBXBuildFile; fileRef = FC2672411F499C1B00281247 /* v3.PNG */; };
+		FC2672471F499C1B00281247 /* v4.PNG in Resources */ = {isa = PBXBuildFile; fileRef = FC2672421F499C1B00281247 /* v4.PNG */; };
+		FC2672481F499C1B00281247 /* v5.PNG in Resources */ = {isa = PBXBuildFile; fileRef = FC2672431F499C1B00281247 /* v5.PNG */; };
+		FC26724A1F499E7800281247 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC2672491F499E7800281247 /* bg.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,12 @@
 		50530DCA1D97FF480064B9B4 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 4.jpg; path = Images/4.jpg; sourceTree = "<group>"; };
 		50530DCB1D97FF480064B9B4 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 5.jpg; path = Images/5.jpg; sourceTree = "<group>"; };
 		50530DD01D9816FA0064B9B4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Common/Constants.swift; sourceTree = "<group>"; };
+		FC26723F1F499C1B00281247 /* v1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = v1.PNG; path = Images/vplayer/v1.PNG; sourceTree = "<group>"; };
+		FC2672401F499C1B00281247 /* v2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = v2.PNG; path = Images/vplayer/v2.PNG; sourceTree = "<group>"; };
+		FC2672411F499C1B00281247 /* v3.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = v3.PNG; path = Images/vplayer/v3.PNG; sourceTree = "<group>"; };
+		FC2672421F499C1B00281247 /* v4.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = v4.PNG; path = Images/vplayer/v4.PNG; sourceTree = "<group>"; };
+		FC2672431F499C1B00281247 /* v5.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = v5.PNG; path = Images/vplayer/v5.PNG; sourceTree = "<group>"; };
+		FC2672491F499E7800281247 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = Images/vplayer/bg.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,7 @@
 		50530DB31D97EE2B0064B9B4 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				FC26723E1F499C0800281247 /* vplayer */,
 				50530DC81D97FF480064B9B4 /* 2.jpg */,
 				50530DC91D97FF480064B9B4 /* 3.jpg */,
 				50530DCA1D97FF480064B9B4 /* 4.jpg */,
@@ -125,6 +138,19 @@
 				50530DD01D9816FA0064B9B4 /* Constants.swift */,
 			);
 			name = Commont;
+			sourceTree = "<group>";
+		};
+		FC26723E1F499C0800281247 /* vplayer */ = {
+			isa = PBXGroup;
+			children = (
+				FC26723F1F499C1B00281247 /* v1.PNG */,
+				FC2672491F499E7800281247 /* bg.jpg */,
+				FC2672401F499C1B00281247 /* v2.PNG */,
+				FC2672411F499C1B00281247 /* v3.PNG */,
+				FC2672421F499C1B00281247 /* v4.PNG */,
+				FC2672431F499C1B00281247 /* v5.PNG */,
+			);
+			name = vplayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,15 +213,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC2672441F499C1B00281247 /* v1.PNG in Resources */,
+				FC2672451F499C1B00281247 /* v2.PNG in Resources */,
+				FC2672481F499C1B00281247 /* v5.PNG in Resources */,
 				50530DCC1D97FF480064B9B4 /* 2.jpg in Resources */,
+				FC2672471F499C1B00281247 /* v4.PNG in Resources */,
 				50530DC71D97FD1E0064B9B4 /* 1.jpg in Resources */,
 				50530DAC1D97D6930064B9B4 /* LaunchScreen.storyboard in Resources */,
 				50530DCD1D97FF480064B9B4 /* 3.jpg in Resources */,
 				50530DBD1D97F9950064B9B4 /* SF-UI-Display-Bold.otf in Resources */,
 				50530DBF1D97F9950064B9B4 /* SF-UI-Display-Medium.otf in Resources */,
+				FC26724A1F499E7800281247 /* bg.jpg in Resources */,
 				50530DC21D97F9950064B9B4 /* SF-UI-Display-Ultralight.otf in Resources */,
 				50530DBE1D97F9950064B9B4 /* SF-UI-Display-Light.otf in Resources */,
 				50530DC11D97F9950064B9B4 /* SF-UI-Display-Thin.otf in Resources */,
+				FC2672461F499C1B00281247 /* v3.PNG in Resources */,
 				50530DA91D97D6930064B9B4 /* Assets.xcassets in Resources */,
 				50530DA71D97D6930064B9B4 /* Main.storyboard in Resources */,
 				50530DCF1D97FF480064B9B4 /* 5.jpg in Resources */,
