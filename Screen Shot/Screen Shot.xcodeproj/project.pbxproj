@@ -31,6 +31,11 @@
 		FC2672471F499C1B00281247 /* v4.PNG in Resources */ = {isa = PBXBuildFile; fileRef = FC2672421F499C1B00281247 /* v4.PNG */; };
 		FC2672481F499C1B00281247 /* v5.PNG in Resources */ = {isa = PBXBuildFile; fileRef = FC2672431F499C1B00281247 /* v5.PNG */; };
 		FC26724A1F499E7800281247 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC2672491F499E7800281247 /* bg.jpg */; };
+		FC535AEE1F4A2A7D009AFC7F /* l1.png in Resources */ = {isa = PBXBuildFile; fileRef = FC535AE91F4A2A7D009AFC7F /* l1.png */; };
+		FC535AEF1F4A2A7D009AFC7F /* l2.png in Resources */ = {isa = PBXBuildFile; fileRef = FC535AEA1F4A2A7D009AFC7F /* l2.png */; };
+		FC535AF01F4A2A7D009AFC7F /* l3.png in Resources */ = {isa = PBXBuildFile; fileRef = FC535AEB1F4A2A7D009AFC7F /* l3.png */; };
+		FC535AF11F4A2A7D009AFC7F /* l4.png in Resources */ = {isa = PBXBuildFile; fileRef = FC535AEC1F4A2A7D009AFC7F /* l4.png */; };
+		FC535AF21F4A2A7D009AFC7F /* l5.png in Resources */ = {isa = PBXBuildFile; fileRef = FC535AED1F4A2A7D009AFC7F /* l5.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +65,11 @@
 		FC2672421F499C1B00281247 /* v4.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = v4.PNG; path = Images/vplayer/v4.PNG; sourceTree = "<group>"; };
 		FC2672431F499C1B00281247 /* v5.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = v5.PNG; path = Images/vplayer/v5.PNG; sourceTree = "<group>"; };
 		FC2672491F499E7800281247 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = Images/vplayer/bg.jpg; sourceTree = "<group>"; };
+		FC535AE91F4A2A7D009AFC7F /* l1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = l1.png; path = Images/vplayer/l1.png; sourceTree = "<group>"; };
+		FC535AEA1F4A2A7D009AFC7F /* l2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = l2.png; path = Images/vplayer/l2.png; sourceTree = "<group>"; };
+		FC535AEB1F4A2A7D009AFC7F /* l3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = l3.png; path = Images/vplayer/l3.png; sourceTree = "<group>"; };
+		FC535AEC1F4A2A7D009AFC7F /* l4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = l4.png; path = Images/vplayer/l4.png; sourceTree = "<group>"; };
+		FC535AED1F4A2A7D009AFC7F /* l5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = l5.png; path = Images/vplayer/l5.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +153,11 @@
 		FC26723E1F499C0800281247 /* vplayer */ = {
 			isa = PBXGroup;
 			children = (
+				FC535AE91F4A2A7D009AFC7F /* l1.png */,
+				FC535AEA1F4A2A7D009AFC7F /* l2.png */,
+				FC535AEB1F4A2A7D009AFC7F /* l3.png */,
+				FC535AEC1F4A2A7D009AFC7F /* l4.png */,
+				FC535AED1F4A2A7D009AFC7F /* l5.png */,
 				FC26723F1F499C1B00281247 /* v1.PNG */,
 				FC2672491F499E7800281247 /* bg.jpg */,
 				FC2672401F499C1B00281247 /* v2.PNG */,
@@ -217,18 +232,23 @@
 				FC2672451F499C1B00281247 /* v2.PNG in Resources */,
 				FC2672481F499C1B00281247 /* v5.PNG in Resources */,
 				50530DCC1D97FF480064B9B4 /* 2.jpg in Resources */,
+				FC535AF01F4A2A7D009AFC7F /* l3.png in Resources */,
 				FC2672471F499C1B00281247 /* v4.PNG in Resources */,
 				50530DC71D97FD1E0064B9B4 /* 1.jpg in Resources */,
 				50530DAC1D97D6930064B9B4 /* LaunchScreen.storyboard in Resources */,
 				50530DCD1D97FF480064B9B4 /* 3.jpg in Resources */,
+				FC535AF11F4A2A7D009AFC7F /* l4.png in Resources */,
 				50530DBD1D97F9950064B9B4 /* SF-UI-Display-Bold.otf in Resources */,
+				FC535AEE1F4A2A7D009AFC7F /* l1.png in Resources */,
 				50530DBF1D97F9950064B9B4 /* SF-UI-Display-Medium.otf in Resources */,
 				FC26724A1F499E7800281247 /* bg.jpg in Resources */,
 				50530DC21D97F9950064B9B4 /* SF-UI-Display-Ultralight.otf in Resources */,
 				50530DBE1D97F9950064B9B4 /* SF-UI-Display-Light.otf in Resources */,
 				50530DC11D97F9950064B9B4 /* SF-UI-Display-Thin.otf in Resources */,
+				FC535AEF1F4A2A7D009AFC7F /* l2.png in Resources */,
 				FC2672461F499C1B00281247 /* v3.PNG in Resources */,
 				50530DA91D97D6930064B9B4 /* Assets.xcassets in Resources */,
+				FC535AF21F4A2A7D009AFC7F /* l5.png in Resources */,
 				50530DA71D97D6930064B9B4 /* Main.storyboard in Resources */,
 				50530DCF1D97FF480064B9B4 /* 5.jpg in Resources */,
 				50530DC01D97F9950064B9B4 /* SF-UI-Display-Regular.otf in Resources */,

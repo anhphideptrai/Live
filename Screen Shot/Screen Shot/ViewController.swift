@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         lbTime.text                             = dateToTimeStringWith(date: Date())
         lbDate.text                             = dateToDateStringWith(date: Date())
         bgImageView.image                       = UIImage.init(named: "bg.jpg")
-        insideImageView.image                   = UIImage.init(named: "v\(idxImg%5 + 1).PNG")
+        insideImageView.image                   = UIImage.init(named: "l\(idxImg%5 + 1).PNG")
         let msg                                 = arrIntros[idxImg%5]
         lbIntro1.text                           = msg.0
         lbIntro2.text                           = msg.1
